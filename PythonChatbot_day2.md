@@ -133,11 +133,10 @@ student@M7012 MINGW64 ~/TIL (master)
 $ git push -u origin master
 
 
-## visual에서 md내용 수정 후 저장
+## visual에서 md내용 수정/추가 후 저장하기
 $ git status
 $ git commit -m "3rd commit"    #몇번째 커밋인지 잘 보고 하기 
-
-git push 하면 업로드 된다  
+$ git push -u origin master    #github 새로고침하여 업로드 확인   
 
 
 ```
@@ -242,3 +241,4 @@ webbrowser.open(search_url)
 
 
 * visual studio : 여러줄 박스 ctrl + /  : 멀티라인 주석화
+* ctrl +shift + i  우클릭안될때 요소검사 
