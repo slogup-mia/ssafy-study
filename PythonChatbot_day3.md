@@ -251,11 +251,25 @@ div{
 </body>
 ```
 
+
+
 ###  CSS 튜토리얼
 
 * [css-tricks.com](css-tricks.com )
 
 * [w3schools.com](w3schools.com)
+
+#### 탬플릿 소스 
+
+* [https://startbootstrap.com](https://startbootstrap.com)
+* [https://getbootstrap.com](https://getbootstrap.com)
+
+
+
+
+
+
+
 
 
 
@@ -277,20 +291,6 @@ div{
 * class 선택자 :  .
 
 *  id 선택자 : # 
-
-
-
-
-
-
-
-Github에 홈페이지 만들기 
-
-*  튜토리얼 : https://pages.github.com/
-
-
-
-
 
 
 
