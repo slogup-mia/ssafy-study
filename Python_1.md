@@ -343,7 +343,9 @@ mysum.__doc__
 
 * 문자열을 활용하는 경우 특수문자 혹은 조작을 하기 위하여 사용되는 것으로 `\`를 활용하여 이를 구분한다.
 
-  ![1546396864049](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1546396864049.png)
+  `\n` :줄바꿈   `\t` : tab   `\r` :캐리지리턴   `\0` :null   `\\`: \    `'`   `"`    
+
+
 
   ``` in #out
   print("""줄바꿔 \n 출력하고
@@ -698,7 +700,23 @@ list(range(0,20,4))		#[0, 4, 8, 12, 16]
 
 ####  v-4 시퀀스에서 활용할 수 있는 연산자/함수
 
-![1546413907826](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1546413907826.png)
+`x in s` : containment test
+
+`x not in s` : containment test
+
+`s1 + s2` :concatenation
+
+`s * n`: n번만큼 반복하여 더하기
+
+`s[i]`: indexing
+
+`s[i:j]`:slicing   `s[i:j:k]`:k간격으로 slicing
+
+`len(s)`:길이
+
+`min(s)`:최솟값   `max(s)`:최댓값
+
+`s.count(x)`: x의 갯수
 
 ```in#out
 s ="string"
@@ -767,6 +785,11 @@ a
 {1: 'a', 2: 'b'}
 ```
 
+```in#out
+student = {"a":10, "b":15, "c":20}
+sum(student.values())				#45
+```
+
 
 
 
@@ -782,6 +805,39 @@ a
 
 
 
+
+``` 
+#workshop 
+# 정수 n과 m. 반복문을 사용하지 않고 별(*) 문자를 이용해 가로 길이 n, 세로 길이 m인 직사각형 형태를 출력하기 
+
+n = 5
+m = 9
+print(("*"*n + "\n") * m )
+```
+
+```
+#workshop 
+#다음 딕셔너리에서 평균 점수를 출력
+
+student = {'python':80, 'algorithom':99, 'django':89, 'flask':83}
+print(sum(student.values())/len(student))
+```
+
+```
+#workshop 
+#학생들의 혈액형(A, B, AB, O)데이터. for문을 이용하여 각 혈액형별 학생수의 합계
+
+blood_types = ['A','B','A','O','AB','AB','O','A','B','AB']
+result = {}
+
+for type in blood_types:
+    if type in result: 
+        result[type] += 1
+    else: 
+        result[type] = 1
+print(result)
+
+```
 
 
 
