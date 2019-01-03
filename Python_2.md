@@ -284,7 +284,6 @@ print(fir+" "+sec_i+'.'+thir_i+'. '+last)
 
 ```
 #선생님 답 
-
 name=input()
 names= name.split()
 for i in range(1,len(names)-1):
@@ -294,8 +293,20 @@ print(''.join(names))
 ```
 
 ```
-#실습문제0 
+# 다시 풀어본 답
+name=input()
+names=name.split()
+for i in range(1,len(names)-1):
+    names[i]=names[i][0]+'.'			#왜? 선생님 답에서는[1][0]일까? 
+print(' '.join(names))
+```
+
+
+
+```
+#실습문제
 #1부터 1000까지의 자연수 중 5의 배수에 해당되는 자연수들의 총합을 구하세요.
+#해냈다! 
 
 sum = 0
 for i in range(1,1001):
@@ -310,14 +321,15 @@ print(sum)
 
 result = []
 
-for I in range(1,1001):
-	if i%5==0;
+for i in range(1,1001):
+	if i%5==0:
 		result.append(i)    #[5,10,...]
 print(sum(result))
 ```
 
 ```
 # 반복문과 조건문만 활용하여 1~30까지 숫자 중에 홀수만 담긴 리스트를 만드세요
+# 해냈다! 
 list_odd=[]
 for i in range(1,31):
     if i % 2==1:
@@ -377,27 +389,19 @@ print(result)
 
 ```
 # 역삼각형의 asrterisk를 출력하는 코드 작성, while문 이용
-# 다시풀기
+#1: ******* 0,7= 7-2*0
+#2: .*****  1,5= 7-2*1
+#3: ..***   2,3= 7-2*2
+#4: ...*    3,1
+#해냈다! 
 
-ast=8
-for i in range(0,8):
-    ast-=i
-    print(" "*i + "*"*ast)
-    
-    
-*******
-.*****
-..***
-...*
+st=7
+sp=0
+for li in range(0,5):
+    print(" "*sp+"*"*st)
+    sp+=1
+    st=st-2
 
-
-
-
-
-ast=8
-for i in range(1,8):
-    ast-=i
-    print(" "*i +"*"*ast+"\n")
 ```
 
 ```
@@ -437,7 +441,7 @@ for a in li:
 
 ```
 #0~73숫자중3으로 끝나는 숫자만 출력
-#다시풀기
+#해냈다~ 
 
 for i in range(1,74):
     if i%10 ==3:
@@ -446,9 +450,9 @@ for i in range(1,74):
 
 ```
 # 한잔에 300원인 커피 10개를 팔수 있는 자판기 코드 
-# 내답
-
-
+												# 다시 풀어보기 
+												# 다시 풀어보기 
+												# 다시 풀어보기 
 price= 300
 
 while i<=10:
@@ -485,6 +489,7 @@ while true:
 
 ```
 #구구단
+#해냈다! 
 
 for i in range(2,10):
 	for a in range(2,10):
@@ -493,17 +498,26 @@ for i in range(2,10):
 
 ```
 # 표준 입력으로 삼각형의 높이가 입력됩니다. 입력된 높이만큼 산 모양으로 별을 출력하는 프로그램을 만드세요. 모양이 같더라도 공백이나 빈 줄이 더 들어가면 틀린 것으로 처리됩니다.    
-...*
-..***
-.*****
-*******
+# 해냈다! 
+
+
+4
+#...*     3,1 2*0 +1
+#..***    2,3 2*1
+#.*****   1,5 2*2 
+#*******  0,7 2*3  
+
+
+
+hgt=int(input())
+sp = hgt
+for i in range(0,hgt+1):
+    st = 2*i+1 
+    print(" "*sp + "*"*st)
+    sp -=1
 
 
 ```
-
-
-
-
 
 
 
@@ -542,7 +556,9 @@ list(enumerate(classroom,start=1))
 
 ```
 #colors = ['Apple', 'Banana', 'Coconut', 'Deli', 'Ele', 'Grape'] 다음 리스트에서 0번째 4번째 5번째 요소를 지운 새로운 리스트를 생성하시오.
-
+												# 다시 풀어보기 
+												# 다시 풀어보기 
+												# 다시 풀어보기 
 
 colors = ['Apple', 'Banana', 'Coconut', 'Deli', 'Ele', 'Grape'] 
 fruit = [color for (a,color) in enumerate(colors) if a not in (0,4,5)]
@@ -552,7 +568,18 @@ print(fruit)
 
 
 
+```
+#50점 이상의 점수들의 총합. for문 이용
+#내가 다시푼 답
+#해냈다! 
+scores=[20,55,67,82,45,33,90,87,100,25]
 
+sum=0
+for scr in scores:
+    if scr>=50:
+        sum+=scr
+print(sum)
+```
 
 ```
 #50점 이상의 점수들의 총합. for문 이용
@@ -564,7 +591,6 @@ for i in scores:
     if i >= 50:
         sum+= i
 print(sum)
-
 ```
 
 ```
@@ -608,9 +634,9 @@ print(result)
   실습 : classroom = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
 
   ```
-  #in 
-  cr = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
-  for key in cr:
+  # 0. dictionary (key 반복)
+  dict = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
+  for key in dict:
       print(key)
       
   #out
@@ -620,18 +646,39 @@ print(result)
   ```
 
   ```
-  #in
+  # 1. key 반복
+  dict = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
+  for key in dict.keys():
+      print(key)
+      
   #out
+  teacher
+  student1
+  student2
   ```
 
   ```
-  #in
+  # 2. value 반복    
+  dict = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
+  for val in dict.values():
+      print(val)
+      
   #out
+  Kim
+  Hong
+  Kang
   ```
 
   ```
-  #in
+  # 3. key와 value 반복
+  dict = {"teacher": "Kim", "student1": "Hong", "student2": "Kang"}
+  for key, val in dict.items():
+      print(key, val)
+      
   #out
+  teacher Kim
+  student1 Hong
+  student2 Kang
   ```
 
 
