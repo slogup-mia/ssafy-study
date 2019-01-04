@@ -716,8 +716,8 @@ for num in enumerate(numbers):
 ```
 # 3이 있을 경우 True를 print하고, 아닐 경우 False를 print
 # numbers = [1, 5, 10]
-# 선생님답
-
+# 선생님답										###답확인 
+					
 result= False 
 for num in enumerate(numbers):
     if numbers == 3:
@@ -838,8 +838,28 @@ print(fruit)
 6번
 
 ```
-숙제ㅔㅔ에에에
+#내 답
 
+for mon in range(1,13):
+    print(mon,"월")
+    print('일 월 화 수 목 금 토')
+    if mon==1 or mon==3 or mon==5 or mon==7 or mon==10 or mon==12:
+        for i in range(1,32):
+            print(i,end=" ")
+            if i%7 ==0:
+                print()
+    elif mon ==2: 
+        for i in range(1,29):
+            print(i,end=" ")
+            if i%7 ==0:
+                print()
+    else: 
+        for i in range(1,31):
+            print(i,end=" ")
+            if i%7 ==0:
+                print()
+    print()
+            
 
 ```
 

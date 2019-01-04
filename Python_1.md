@@ -10,9 +10,9 @@ https://github.com/sspy1/python_basic
 
 `$ cd ~                                                                          `
 
-git clone  https://github.com/sspy1/python_basic.git
+`$ mkdir python_basic`
 
-`$ mkdir python_basic                                                            `
+git clone  https://github.com/sspy1/python_basic.git​                                                    `
 
 `$ cd python_basic`
 
