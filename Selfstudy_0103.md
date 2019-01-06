@@ -118,3 +118,99 @@
   1 2 3 4 
   1/2/3/4/
   ```
+
+###  " ".join(a)
+
+### "/".join(a)
+
+* a문자열을 공백없이 가져오겠다 
+
+* /으로 분리하여 가져오겠다 
+
+  ```
+    name=input()
+    names=name.split()
+    for i in range(1,len(names)-1):
+        names[i]=names[i][0]+'.'			
+    print(' '.join(names))
+  ```
+
+
+
+###  my_list.append(object)
+
+###  my_list.extend(iterable) 
+
+```
+# Adds an object (a number, a string or a 
+# another list) at the end of my_list
+# my_list.append(object)
+
+my_list = ['geeks', 'for'] 
+my_list.append('geeks') 
+print my_list 
+
+#['geeks', 'for', 'geeks']
+```
+
+```
+my_list = ['geeks', 'for', 'geeks'] 
+another_list = [6, 0, 4, 1] 
+my_list.append(another_list) 
+print my_list 
+
+#['geeks', 'for', 'geeks', [6, 0, 4, 1]]
+```
+
+```
+# Each element of an iterable gets appended 
+# to my_list
+#my_list.extend(iterable) 
+
+my_list = ['geeks', 'for'] 
+another_list = [6, 0, 4, 1] 
+my_list.extend(another_list) 
+print my_list 
+
+#['geeks', 'for', 6, 0, 4, 1]
+```
+
+```
+my_list = ['geeks', 'for', 6, 0, 4, 1] 
+my_list.extend('geeks') 
+print my_list 
+
+#['geeks', 'for', 6, 0, 4, 1, 'g', 'e', 'e', 'k', 's']
+```
+
+
+
+### sorted(set(my_arr))
+
+* my_array라는 어레이 요소들을 중복 불허(set)하여 오름차순 정렬(sorting)하겠다
+
+###  my_arr[::1]
+
+* my_arr라는 어레이를 뒤집어 정렬하겠다. 
+
+
+
+
+
+###  n**0.5 
+
+### n**2
+
+* n의 제곱근 알아보기  / n의 제곱
+
+  ```
+  if (n**0.5)%1==0:
+  	print("n은 제곱근을 가진다")
+  ```
+
+  ```
+  a = 3
+  print(a**2)		# 9 
+  ```
+
+

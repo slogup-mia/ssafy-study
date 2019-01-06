@@ -2,9 +2,7 @@
 
 ###  문제1
 
-```
-
-```
+hint. 1월1일(금) 부터 a월 b일까지는 몇일일까  =   a월(*각 월 일수)+ b일 
 
 ```
 #선생님답
@@ -23,6 +21,26 @@ solution(1,2)
 
 ###  문제2
 
+hint.  ASCII CODE
+
+A 	B	 C 	D	 E	 F 	G 	H	 I	 J	 K	 L	 M	 
+
+65	66	67	68	69	70	71	72	73	74	75	76	77
+
+N	 O	 P	 Q	 R	 S	 T	 U	 V	 W	 X	 Y	 Z 
+
+78	79	80	81	82	83	84	85	86	87	88	89	90
+
+
+
+a	 b	 c	 d	 e	 f	 g	 h	 i	 j	 k	 l	 m	 
+
+97	98	99	100	101	102	103	104	105	106	107	108	109	
+
+n	 o	 p	 q	 r	 s	 t	 u	 v	 w	 x	 y	 z 
+
+110	111	112	113	114	115	116	117	118	119	120	121	122
+
 ```
 #참고 : 아스키코드 사용 
 #ASCII CODE
@@ -38,8 +56,9 @@ def solution(s,n):
     s= list(s)
     
     for i in range(len(s)):
-        if s[i].isupper():   #대문자인 경우
+        if s[i].isupper():   #i번째 글자가 대문자인 경우
             s[i]=chr((ord(s[i])-ord('A')+n) %26 +ord('A'))   #GRAPE
+            	  #i번째 글자코드- 65 +밀기n번  
         elif s[i].islower():
             s[i]=chr((ord(s[i])-ord('a')+n) %26 +ord('a'))
     answer = "".join(s)
@@ -52,7 +71,7 @@ print(solution('Grape',5))
 ### 문제3
 
 ```
-#찬미씨답
+#찬미씨답						# 다시확인 
 
 def updown(s):
     lst_s = s.split(" ")
@@ -101,11 +120,11 @@ print(ratio())
 #선생님 답
 
 def find_non_cons(a):
-    i = a[0] #2
-    for n in a: #[2,3,5,6,7]
-        if n != i: #2 !=2??
+    i = a[0]             #2
+    for n in a:          #[2,3,5,6,7]
+        if n != i:       #2 !=2??
             return n 
-        i += 1 #4
+        i += 1           #4
     return None
 print(find_non_cons([2,3,5,6,7]))
 ```

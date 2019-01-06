@@ -32,7 +32,7 @@ def triangle(row):
             newrow.extend(colors-set([l,r]))
             
     return triangle(newrow)
-print(triangle('RRG'))
+print(triangle('RRGBRGBB'))
 ```
 
 
@@ -78,6 +78,23 @@ print(rout([1, 2, 3, 4, 9]))
 ###  문제4
 
 ```
+#내답 
+
+def nums(n):
+    if n<=0:
+        print("")
+    for i in range(1,n+1):
+        if i%2==0:
+            pass
+        else:
+            print(str(i)*i)
+print(nums(7))    
+```
+
+```
+#선생님답
+#다시보기 
+
 def pattern(n):
     string =""
     a=n
@@ -100,11 +117,46 @@ print(pattern(20))
 ### 문제 5
 
 ```
+#내답 
+
+# 단어 word를 리스트로?받는다. 
+# left, right 리스트 생성.
+# odd=[], even=[] 
+# 만약 word의 홀수 번째 알파벳이 모두 left, 짝수번이 right 에 있거나,
+# 홀수 번째 알파벳이 모두 right, 짝수번이 left 에 있다면 
+
+odd=[]
+even=[]
+def type(word):
+    left,right = 'qwertasdfgzxcvb','yuiophjklnm'
+    for i in word:
+        if word.ord[i]%2 != 0:
+            str(i).append(even)
+        else:
+            str(i).append(odd)
+    if odd in left and even in right:
+        return True
+    elif even in left and odd in right:
+        return True
+    else:
+        return False 
+    
+
+print(type('apple'))
+print(type('qpwo'))
+```
+
+
+
+```
+# 선생님답
+#다시보기 
+
 def cftb_wd(word):
     left,right = 'qwertasdfgzxcvb','yuiophjklnm'
     l= True if word[0] in left else False # l true
     
-    for letter in word[1:]: #ywu
+    for letter in word [1:]: #ywu
         if letter in left and l:
             return False
         if letter in right and not l:
