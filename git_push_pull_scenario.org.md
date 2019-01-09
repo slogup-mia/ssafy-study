@@ -181,13 +181,6 @@ student@M7012 MINGW64 ~ (master)
 $ cd home_computer
 
 student@M7012 MINGW64 ~/home_computer (master)
-$ git colne https://github.com/JungSWon/git_practice.git
-git: 'colne' is not a git command. See 'git --help'.
-
-The most similar command is
-        clone
-
-student@M7012 MINGW64 ~/home_computer (master)
 $ git clone https://github.com/JungSWon/git_practice.git
 Cloning into 'git_practice'...
 remote: Enumerating objects: 6, done.
