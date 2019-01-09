@@ -200,7 +200,7 @@ print(b)
 ```
 
     hello my name is john
-
+    
 
 
 ```python
@@ -333,14 +333,14 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-36-8ccd45027c55> in <module>
           3 "ssafy".index('s')
           4 #0
     ----> 5 "ssafy".index('z')
-
+    
 
     ValueError: substring not found
 
@@ -433,7 +433,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe']
-
+    
 
 
 ```python
@@ -443,7 +443,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe']
-
+    
 
 
 ```python
@@ -455,7 +455,7 @@ print(caffe)
 
     []
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe']
-
+    
 
 
 ```python
@@ -490,7 +490,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya']
-
+    
 
 
 ```python
@@ -500,7 +500,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림']
-
+    
 
 
 ```python
@@ -516,7 +516,7 @@ print(caffe + ['바나프레소','엔젤리너스'])
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', '바나프레소', '엔젤리너스']
-
+    
 
 
 ```python
@@ -612,17 +612,6 @@ ispal_cha(word)
 
 ```python
 #5.재귀로 짜보기
-word = 'HellosoSolleh'
-
-def ispal_cha(word): 
-    word= word.replace(" ","").lower()
-    if len(word)<2:
-        return True
-    if word[0] != word[-1]:
-        return False
-    return isPal4(word[!:-1])
-
-ispal4("Too hot to hoot")
 ```
 
 ### `insert(i, x)`
@@ -637,7 +626,7 @@ print(caffe)
 ```
 
     ['hi', '메가커피', 'starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림']
-
+    
 
 
 ```python
@@ -647,17 +636,18 @@ print(caffe)
 ```
 
     ['bye', 'hi', '메가커피', 'starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', 'bye', '크리스피크림', 'bye']
-
+    
 
 
 ```python
 # 길이를 넘어서는 인덱스는 무조건 마지막에 하나만 붙습니다.
-caffe.insert(100,'마지막에붙는다')
+caffe= ['1','2']
+caffe.insert(99,'마지막에붙는다')
 print(caffe)
 ```
 
-    ['bye', 'hi', '메가커피', 'starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', 'bye', '크리스피크림', 'bye', 'bye', '마지막에붙는다']
-
+    ['1', '2', '마지막에붙는다']
+    
 
 ### `remove(x)`
 
@@ -671,7 +661,7 @@ print(numbers)
 ```
 
     [1, 2, 1, 2]
-
+    
 
 
 ```python
@@ -681,7 +671,7 @@ print(numbers)
 ```
 
     [2, 1, 2]
-
+    
 
 
 ```python
@@ -691,7 +681,7 @@ print(numbers)
 ```
 
     [2, 2]
-
+    
 
 
 ```python
@@ -702,14 +692,14 @@ print(numbers)
 
 
     ---------------------------------------------------------------------------
-    
+
     ValueError                                Traceback (most recent call last)
-    
+
     <ipython-input-75-d65fc5666819> in <module>
           1 # remove는 값이 없으면 오류가 발생합니다. 확인해봅시다.
     ----> 2 numbers.remove(2)
           3 print(numbers)
-
+    
 
     ValueError: list.remove(x): x not in list
 
@@ -733,7 +723,7 @@ print(a)
 ```
 
     [2, 3, 4, 5, 6]
-
+    
 
 
 ```python
@@ -755,8 +745,15 @@ print(a)
 
 ```python
 a = [1, 2, 3, 4, 5]
-
+a.index(1)
 ```
+
+
+
+
+    0
+
+
 
 
 ```python
@@ -772,15 +769,27 @@ a = [1, 2, 3, 4, 5]
 
 ```python
 a = [1, 2, 5, 1, 5, 1]
-
+a.count(5)
 ```
+
+
+
+
+    2
+
+
 
 
 ```python
 # 따라서 원하는 값을 모두 삭제하려면 다음과 같이 할 수 있습니다.
 a = [1, 2, 1, 3, 4]
-
+for i in range(a.count(1)):
+    a.remove(1)
+print(a)
 ```
+
+    [2, 3, 4]
+    
 
 
 ```python
@@ -797,8 +806,19 @@ sorted()와는 다르게 원본 list를 변형시키고, None을 리턴합니다
 
 ```python
 import random
+lotto = random.sample(range(1,46),6)
 
+#1. sorted()
+sorted_lotto = sorted(lotto)
+print(sorted_lotto)
+
+#2. [].sort()
+print(lotto.sort())
 ```
+
+    [4, 5, 11, 14, 25, 33]
+    None
+    
 
 
 ```python
@@ -812,41 +832,101 @@ import random
 
 ```python
 classroom = ['Tom', 'David', 'Justin']
-
+print(reversed(classroom))
+print(classroom)
 ```
+
+    <list_reverseiterator object at 0x00C461D0>
+    ['Tom', 'David', 'Justin']
+    
+
+
+```python
+print(list(reversed(classroom)))
+print(classroom)
+
+print(classroom.reverse())
+print(classroom)
+```
+
+    ['Justin', 'David', 'Tom']
+    ['Tom', 'David', 'Justin']
+    None
+    ['Justin', 'David', 'Tom']
+    
 
 ## 복사
 
 
 ```python
-# 리스트 복사를 해봅시다.
-original_list = [1, 2, 3]
-
+b = a 
+b[0] = 0 
+print(a)
+#mutable 자료형 [list],{dictionary}
+#은 복사할 때 값이 복사되는것이아니라 주소가 복사되어 원본이 바뀐다.
 ```
 
 
 ```python
-print(original_list)
+# 리스트 복사를 해봅시다.
+original_list = [1, 2, 3]
+new_list = original_list   #복사가 아님
+print(id(new_list))
+print(id(original_list))
+
+```
+
+    12915016
+    12915016
+    
+
+
+```python
+new_list = original_list[:]
+print(id(new_list))
+print(id(original_list))
+```
+
+
+```python
+print(original_list is new_list) #==
 # b의 값을 바꾸고 a를 출력해봅시다.
 
 ```
 
 
 ```python
-
-```
-
-
-```python
 # 숫자를 확인해봅시다.
-
+a=12
+b=a
+print(b == a)  #True
+print(b is a)  #True
 ```
+
+    True
+    True
+    
 
 
 ```python
 # 딕셔너리도 확인해봅시다.
-
+student = {"name":"John","age":"34"}
+new_student = student
+print(new_student is student)
 ```
+
+    True
+    
+
+
+```python
+student = {"name":"John","age":"34"}
+new_student = student.copy()
+print(new_student is student)
+```
+
+    False
+    
 
 
 ```python
@@ -879,6 +959,9 @@ b[0] = 5
 print(a)
 ```
 
+    [1, 2, 3]
+    
+
 
 ```python
 a = [1, 2, 3]
@@ -887,12 +970,16 @@ b[0] = 5
 print(a)
 ```
 
+    [1, 2, 3]
+    
+
 
 ```python
 IFrame('https://goo.gl/ZH6yZd', width='100%', height='300px')
 ```
 
 * 하지만, 이렇게 하는 것도 일부 상황에만 서로 다른 얕은 복사(shallow copy)입니다.
+* 아래 shallow copy의 한계 예 
 
 
 ```python
@@ -900,7 +987,25 @@ a = [1, 2, [1, 2]]
 b = a[:]
 b[2][0] = 3
 print(a)
+
+# a = [1, 2, [  ]] 까지만 복제되고, a = [     [1, 2]] 한번 더들어가는 부분은 복제되지 않는다.
+
 ```
+
+    [1, 2, [3, 2]]
+    
+
+
+```python
+#위를 이해를 돕기위한 비교 
+a = [1, 2, [1, 2]]
+b = a[:]
+b[1] = 3
+print(a)
+```
+
+    [1, 2, [1, 2]]
+    
 
 
 ```python
@@ -913,7 +1018,8 @@ IFrame('https://goo.gl/FZcYbJ', width='100%', height='300px')
 
 
 ```python
-import copy
+import copy     #위의 shallow copy의 한계를 극복하기 위한 모듈 
+                #리스트 구조 모든 단계를 카피한다. 
 a = [1, 2, [1, 2]]
 b = copy.deepcopy(a)
 b[2][0] = 3
@@ -950,13 +1056,54 @@ List를 만들 수 있는 간단한 방법이 있습니다.
 
 
 ```python
-
+even_list =[]  #짝수만 담아야지 
+for i in range(1,11):
+    if i%2 ==0:
+        even_list.append(i)
+print(even_list)
 ```
+
+    [2, 4, 6, 8, 10]
+    
 
 
 ```python
+#[채워넣을 값에 해당하는 변수]
 
+numbers = [x for x in range(1,6)]
+
+# =>  for i in range(1,6):
+#        numbers.append(i)
+
+print(numbers)
 ```
+
+    [1, 2, 3, 4, 5]
+    
+
+
+```python
+[x*2 for x in range(1,6)]
+```
+
+
+
+
+    [2, 4, 6, 8, 10]
+
+
+
+
+```python
+[i**3 for i in range(1,11)]
+```
+
+
+
+
+    [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+
+
 
 ## 활용법
 
@@ -989,14 +1136,40 @@ boys = ['justin', 'david', 'kim']
 
 ```python
 # 아래에 반복문을 활용하여 만들어주세요.
+girls =['j','s','w']
+boys =['k','h','j']
 
+pair =[]
+for girl in girls:
+    for boy in boys:
+        pair.append((boy,girl))
+print(pair)
 ```
+
+    [('k', 'j'), ('h', 'j'), ('j', 'j'), ('k', 's'), ('h', 's'), ('j', 's'), ('k', 'w'), ('h', 'w'), ('j', 'w')]
+    
 
 
 ```python
 # 아래에 List comprehension을 활용하여 만들어주세요.
-
+[(boy,girl)for boy in boys for girl in girls]
+# 결과물은 리스트로, 요소들은 튜플로 나옴을 알아야 한다. 
 ```
+
+
+
+
+    [('k', 'j'),
+     ('k', 's'),
+     ('k', 'w'),
+     ('h', 'j'),
+     ('h', 's'),
+     ('h', 'w'),
+     ('j', 'j'),
+     ('j', 's'),
+     ('j', 'w')]
+
+
 
 ### 피타고라스 정리
 
@@ -1014,14 +1187,53 @@ boys = ['justin', 'david', 'kim']
 
 ```python
 # 아래에 반복문을 활용하여 만들어주세요.
+ptgrs=[]
+for x in range(1,51):
+    for y in range(x,51):
+        for z in range(y,51):
+            if x**2 + y**2 == z**2:
+                ptgrs.append((x,y,z))
 
+print(ptgrs)
+                
 ```
+
+    [(3, 4, 5), (5, 12, 13), (6, 8, 10), (7, 24, 25), (8, 15, 17), (9, 12, 15), (9, 40, 41), (10, 24, 26), (12, 16, 20), (12, 35, 37), (14, 48, 50), (15, 20, 25), (15, 36, 39), (16, 30, 34), (18, 24, 30), (20, 21, 29), (21, 28, 35), (24, 32, 40), (27, 36, 45), (30, 40, 50)]
+    
 
 
 ```python
 # 아래에 List comprehension을 활용하여 만들어주세요.
+[(boy,girl)for boy in boys for girl in girls]
 
+[(x,y,z)for x in range(1,51) for y in range(x,51) for z in range(y,51) if x**2 + y**2 == z**2]
 ```
+
+
+
+
+    [(3, 4, 5),
+     (5, 12, 13),
+     (6, 8, 10),
+     (7, 24, 25),
+     (8, 15, 17),
+     (9, 12, 15),
+     (9, 40, 41),
+     (10, 24, 26),
+     (12, 16, 20),
+     (12, 35, 37),
+     (14, 48, 50),
+     (15, 20, 25),
+     (15, 36, 39),
+     (16, 30, 34),
+     (18, 24, 30),
+     (20, 21, 29),
+     (21, 28, 35),
+     (24, 32, 40),
+     (27, 36, 45),
+     (30, 40, 50)]
+
+
 
 ### 모음 제거하기
 
@@ -1038,9 +1250,32 @@ boys = ['justin', 'david', 'kim']
 
 
 ```python
-# 아래에 List comprehension을 활용하여 만들어주세요.
-
+# 참고
+words = 'Life is too short, you need python!'
+print(words.split())
+result = [char for char in words]
+print(result)
 ```
+
+    ['Life', 'is', 'too', 'short,', 'you', 'need', 'python!']
+    ['L', 'i', 'f', 'e', ' ', 'i', 's', ' ', 't', 'o', 'o', ' ', 's', 'h', 'o', 'r', 't', ',', ' ', 'y', 'o', 'u', ' ', 'n', 'e', 'e', 'd', ' ', 'p', 'y', 't', 'h', 'o', 'n', '!']
+    
+
+
+```python
+# 아래에 List comprehension을 활용하여 만들어주세요.
+words = 'Life is too short, you need python!'
+vowers = 'aeiou'      # =['a','e','i','o','u']도 가능 
+result = [char for char in words if char not in vowers]
+"".join(result)
+```
+
+
+
+
+    'Lf s t shrt, y nd pythn!'
+
+
 
 # 딕셔너리 메소드 활용
 
