@@ -247,6 +247,10 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
 
 그리드에 관한 부트스트랩 소스  : https://getbootstrap.com/docs/4.2/layout/grid/  
 
+그리드에 관한 CSS 정리 :https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Flexbox%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B0%9C%EB%85%90
+
+그리드를 재미있고 쉽게 학습하기  :https://flexboxfroggy.com/
+
 1. gird.html에 부트스트랩 - start - css, js코드를 헤드나 바디에 복붙 
 
 2. 바디에 2중 div 
@@ -260,6 +264,9 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
    ```
 
    - 여기서 container 클래스 :  반응형 ; 창을 줄이면 콘텐츠도 같이 줄어듦
+
+     ​						container-fluid로 쓰면 패딩이 조금 덜 먹힌다. 
+
    - row 클래스 :  행구분  ㅡ>   (cf. col 클래스 : 열||||) 
 
 3. -1 부트스트랩 -컴포넌트 -카드 코드 복붙 
@@ -279,7 +286,7 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
        </div>
    ```
 
-3. -2 -1
+4. -2 -1
 
    ```
    
@@ -315,6 +322,67 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
        </div>
    ```
 
+5. 
+
+   ```
+   
+   
+   
+   
+   
+   ```
+
+6. div tag 
+
+   - 6-1. flexboxfroggy.com 
+
+     참고 )내 구글 문서 : https://docs.google.com/presentation/d/1FgAOo5AHjPDEzPV6QY8GWZ591H7xlw2Ret6DgcpoF8Q/edit#slide=id.p
+
+   - 6-2. flex
+
+     - ```
+       ...
+       	<style>
+                   .flex-container{
+                       display:flex;
+                       }
+               </style>
+           </head>
+       ```
+
+       또는  https://getbootstrap.com/docs/4.1/utilities/flex/ 복붙
+
+     ​	https://www.w3schools.com/bootstrap4/bootstrap_flex.asp 복붙
+
+   - ```
+     <body>
+     	<div class="d-flex p-2 bd-highlight">I'm a flexbox container!</div>
+     ...
+     ```
+
+     ```
+         <div class='container-fluid'>
+             <div class="d-flex flex-row bg-secondary">
+                 <div class="p-2 bg-info">Flex item 1</div>
+                 <div class="p-2 bg-warning">Flex item 2</div>
+                 <div class="p-2 bg-primary">Flex item 3</div>
+             </div>
+                 
+                 <div class="d-flex flex-row-reverse bg-secondary">
+                 <div class="p-2 bg-info">Flex item 1</div>
+                 <div class="p-2 bg-warning">Flex item 2</div>
+                 <div class="p-2 bg-primary">Flex item 3</div>
+             </div>
+         </div>
+     ```
+
+   - 6-3.      아래를 해야하는경우가 언제 있는지 파악해보자......왜??????
+
+     ```
+             <style>
+                 html,body {height: 100%;}
+             </style>
+     ```
 
 
 
