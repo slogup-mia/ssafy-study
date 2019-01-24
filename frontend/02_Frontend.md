@@ -27,6 +27,8 @@
 
 - 컬러코드 가져오기 : https://htmlcolorcodes.com/
 
+- 좀더 친절한 컬러코드 제공 : https://www.color-hex.com/
+
 
 
   ### 중복되는 코드 간편하게 설정하기 
@@ -224,6 +226,8 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
 
 `dark` 어두운회색
 
+`background-color:rgbs(0,0,0,50)` 네번째 인자로 불투명도를 조절할 수 있다.
+
 
 
 ### 3. Border 
@@ -237,7 +241,7 @@ bootstrap을 쓰면 박스모델 설정하면서 꼬이지 않도록 편하게 �
 
 
 
-### 4. Display
+
 
 [css grid](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjM5I3w3vHfAhVBeXAKHR0ABF0QjRx6BAgBEAU&url=https%3A%2F%2Fwebkit.org%2Fblog%2F7434%2Fcss-grid-layout-a-new-layout-module-for-the-web%2F&psig=AOvVaw16DYlIDJwtc4qf-DFfUDWB&ust=1547708830873833)를 보기좋게 나누어 배치하는 것은 매우 중요하다. 
 
@@ -407,4 +411,10 @@ Sass
 상속을 예쁘게 만들어주는 
 
 빠르게 원하는 부분만 짠 후, 부트스트랩과 혼용하여 css로 컴파일해서 쓴다
+
+
+
+3.
+
+ul>li*3 + tab
 
