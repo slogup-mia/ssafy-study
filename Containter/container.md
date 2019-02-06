@@ -200,7 +200,7 @@ print(b)
 ```
 
     hello my name is john
-    
+
 
 
 ```python
@@ -333,14 +333,14 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 
 
     ---------------------------------------------------------------------------
-
+    
     ValueError                                Traceback (most recent call last)
-
+    
     <ipython-input-36-8ccd45027c55> in <module>
           3 "ssafy".index('s')
           4 #0
     ----> 5 "ssafy".index('z')
-    
+
 
     ValueError: substring not found
 
@@ -433,7 +433,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe']
-    
+
 
 
 ```python
@@ -443,7 +443,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe']
-    
+
 
 
 ```python
@@ -455,7 +455,7 @@ print(caffe)
 
     []
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe']
-    
+
 
 
 ```python
@@ -490,7 +490,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya']
-    
+
 
 
 ```python
@@ -500,7 +500,7 @@ print(caffe)
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림']
-    
+
 
 
 ```python
@@ -516,7 +516,7 @@ print(caffe + ['바나프레소','엔젤리너스'])
 ```
 
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', '바나프레소', '엔젤리너스']
-    
+
 
 
 ```python
@@ -626,7 +626,7 @@ print(caffe)
 ```
 
     ['hi', '메가커피', 'starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림']
-    
+
 
 
 ```python
@@ -636,7 +636,7 @@ print(caffe)
 ```
 
     ['bye', 'hi', '메가커피', 'starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'w cafe', 'ediya', 'ediya', 'coffebean', '빽다방', '커피니', '던킨도넛', '크리스피크림', 'coffebean', '빽다방', '커피니', '던킨도넛', 'bye', '크리스피크림', 'bye']
-    
+
 
 
 ```python
@@ -647,7 +647,7 @@ print(caffe)
 ```
 
     ['1', '2', '마지막에붙는다']
-    
+
 
 ### `remove(x)`
 
@@ -661,7 +661,7 @@ print(numbers)
 ```
 
     [1, 2, 1, 2]
-    
+
 
 
 ```python
@@ -671,7 +671,7 @@ print(numbers)
 ```
 
     [2, 1, 2]
-    
+
 
 
 ```python
@@ -681,7 +681,7 @@ print(numbers)
 ```
 
     [2, 2]
-    
+
 
 
 ```python
@@ -692,14 +692,14 @@ print(numbers)
 
 
     ---------------------------------------------------------------------------
-
+    
     ValueError                                Traceback (most recent call last)
-
+    
     <ipython-input-75-d65fc5666819> in <module>
           1 # remove는 값이 없으면 오류가 발생합니다. 확인해봅시다.
     ----> 2 numbers.remove(2)
           3 print(numbers)
-    
+
 
     ValueError: list.remove(x): x not in list
 
@@ -723,7 +723,7 @@ print(a)
 ```
 
     [2, 3, 4, 5, 6]
-    
+
 
 
 ```python
@@ -789,7 +789,7 @@ print(a)
 ```
 
     [2, 3, 4]
-    
+
 
 
 ```python
@@ -818,7 +818,7 @@ print(lotto.sort())
 
     [4, 5, 11, 14, 25, 33]
     None
-    
+
 
 
 ```python
@@ -838,7 +838,7 @@ print(classroom)
 
     <list_reverseiterator object at 0x00C461D0>
     ['Tom', 'David', 'Justin']
-    
+
 
 
 ```python
@@ -853,7 +853,7 @@ print(classroom)
     ['Tom', 'David', 'Justin']
     None
     ['Justin', 'David', 'Tom']
-    
+
 
 ## 복사
 
@@ -878,7 +878,7 @@ print(id(original_list))
 
     12915016
     12915016
-    
+
 
 
 ```python
@@ -905,7 +905,7 @@ print(b is a)  #True
 
     True
     True
-    
+
 
 
 ```python
@@ -916,7 +916,7 @@ print(new_student is student)
 ```
 
     True
-    
+
 
 
 ```python
@@ -926,7 +926,7 @@ print(new_student is student)
 ```
 
     False
-    
+
 
 
 ```python
@@ -960,7 +960,7 @@ print(a)
 ```
 
     [1, 2, 3]
-    
+
 
 
 ```python
@@ -971,7 +971,7 @@ print(a)
 ```
 
     [1, 2, 3]
-    
+
 
 
 ```python
@@ -993,7 +993,7 @@ print(a)
 ```
 
     [1, 2, [3, 2]]
-    
+
 
 
 ```python
@@ -1005,7 +1005,7 @@ print(a)
 ```
 
     [1, 2, [1, 2]]
-    
+
 
 
 ```python
@@ -1064,7 +1064,7 @@ print(even_list)
 ```
 
     [2, 4, 6, 8, 10]
-    
+
 
 
 ```python
@@ -1079,7 +1079,7 @@ print(numbers)
 ```
 
     [1, 2, 3, 4, 5]
-    
+
 
 
 ```python
@@ -1147,7 +1147,7 @@ print(pair)
 ```
 
     [('k', 'j'), ('h', 'j'), ('j', 'j'), ('k', 's'), ('h', 's'), ('j', 's'), ('k', 'w'), ('h', 'w'), ('j', 'w')]
-    
+
 
 
 ```python
@@ -1199,7 +1199,7 @@ print(ptgrs)
 ```
 
     [(3, 4, 5), (5, 12, 13), (6, 8, 10), (7, 24, 25), (8, 15, 17), (9, 12, 15), (9, 40, 41), (10, 24, 26), (12, 16, 20), (12, 35, 37), (14, 48, 50), (15, 20, 25), (15, 36, 39), (16, 30, 34), (18, 24, 30), (20, 21, 29), (21, 28, 35), (24, 32, 40), (27, 36, 45), (30, 40, 50)]
-    
+
 
 
 ```python
@@ -1259,7 +1259,7 @@ print(result)
 
     ['Life', 'is', 'too', 'short,', 'you', 'need', 'python!']
     ['L', 'i', 'f', 'e', ' ', 'i', 's', ' ', 't', 'o', 'o', ' ', 's', 'h', 'o', 'r', 't', ',', ' ', 'y', 'o', 'u', ' ', 'n', 'e', 'e', 'd', ' ', 'p', 'y', 't', 'h', 'o', 'n', '!']
-    
+
 
 
 ```python

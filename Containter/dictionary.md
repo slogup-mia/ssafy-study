@@ -33,7 +33,7 @@ print(my_dict)
 ```
 
     {'banana': '바나나'}
-    
+
 
 
 ```python
@@ -42,12 +42,12 @@ my_dict.pop('melon')
 
 
     ---------------------------------------------------------------------------
-
+    
     KeyError                                  Traceback (most recent call last)
-
+    
     <ipython-input-71-2a8b4f967f4a> in <module>
     ----> 1 my_dict.pop('melon')
-    
+
 
     KeyError: 'melon'
 
@@ -84,7 +84,7 @@ print(my_dict)
 ```
 
     {'apple': '사과', 'banana': '바나나', 'melon': '멜론', 'kiwi': '키위'}
-    
+
 
 ### `.get(key[, default])`
 
@@ -100,13 +100,13 @@ my_dict['pineapple']
 
 
     ---------------------------------------------------------------------------
-
+    
     KeyError                                  Traceback (most recent call last)
-
+    
     <ipython-input-74-dae0385d9638> in <module>
           1 my_dict = {'apple': '사과', 'banana': '바나나', 'melon': '멜론'}
     ----> 2 my_dict['pineapple']
-    
+
 
     KeyError: 'pineapple'
 
@@ -117,7 +117,7 @@ print(my_dict.get('pineapple'))
 ```
 
     None
-    
+
 
 
 ```python
@@ -155,7 +155,7 @@ print(cubic)
 ```
 
     {1: 1, 2: 8, 3: 27, 4: 64, 5: 125, 6: 216, 7: 343}
-    
+
 
 
 ```python
@@ -165,7 +165,7 @@ print(cubic)
 ```
 
     {64, 1, 8, 343, 216, 27, 125}
-    
+
 
 
 ```python
@@ -182,7 +182,7 @@ print(new_dict)
 ```
 
     {'경기': 82, '중국': 200}
-    
+
 
 
 ```python
@@ -365,7 +365,7 @@ for digit_a, digit_b in zip(a, b):
     1 5
     2 6
     3 7
-    
+
 
 * zip은 반드시 길이가 같을 때 사용해야한다. 가장 짧은 것을 기준으로 구성한다.
 
@@ -465,7 +465,7 @@ print(a)
 ```
 
     {1, 2, 3, 4, 5}
-    
+
 
 ### `update(*others)`
 
@@ -484,7 +484,7 @@ print(a)
 ```
 
     {1, 2, 3, 5, 7, 9}
-    
+
 
 ### `.remove(elem)`
 
@@ -498,13 +498,13 @@ a.remove(7)
 
 
     ---------------------------------------------------------------------------
-
+    
     KeyError                                  Traceback (most recent call last)
-
+    
     <ipython-input-5-91e88d8f5a19> in <module>
           1 # 에러를 확인해봅시다.
     ----> 2 a.remove(7)
-    
+
 
     KeyError: 7
 
@@ -517,13 +517,13 @@ print(a)
 
 
     ---------------------------------------------------------------------------
-
+    
     KeyError                                  Traceback (most recent call last)
-
+    
     <ipython-input-7-24b6210634f1> in <module>
     ----> 1 a.remove(3)
           2 print(a)
-    
+
 
     KeyError: 3
 
@@ -539,7 +539,7 @@ print(a)
 ```
 
     {1, 2, 3}
-    
+
 
 ### `pop()`
 

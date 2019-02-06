@@ -29,7 +29,7 @@ print(sn(100,5,2))
 ```
 
     33.333333333333336
-    
+
 
 
 ```python
@@ -50,7 +50,7 @@ print(snail(100,5,2))
 ```
 
     33
-    
+
 
 # 무엇이 중복일까
 
@@ -66,55 +66,26 @@ duplicated(['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n', 'b'])
 
 
 ```python
-# 여기에 코드를 작성하시오.
-# 
+# 내 답
 
-def duplicated(li):
-    dub = []
-    for i in li:
-        for a in li[i+1:]:
-            if i == a:
-                dub.append(i)
-    return dub 
-print(duplicated(['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n', 'b']))
-            
-        
-                
+def duplicated(list):
+    pop_li = []
+    for i in list:
+        if list.count(i) > 1 and i not in pop_li:
+            pop_li.append(i)
+            print(i,':i',list.count(i),':li.cnt(i)')
+ 
+    print(pop_li)
     
 ```
-
-    ['b', 'b', 'b', 'c', 'b', 'b', 'b', 'd', 'm', 'n', 'n', 'n', 'n', 'b', 'b', 'b']
-    
-
 
 ```python
 duplicated= ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n', 'b']
-for i in duplicated[1:]:
-    print(i)
 ```
 
-    b
-    c
-    b
-    d
-    m
-    n
-    n
-    b
-    
-
-
-```python
-list(set(['b', 'n', 'b'])
-```
-
-
-```python
-a = []
-
-False or a.append('c')
-print(a)
-```
+    b :i 4 :li.cnt(i)
+    n :i 2 :li.cnt(i)
+    ['b', 'n']
 
 
 ```python
@@ -132,7 +103,7 @@ print(dup(['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n', 'b']))
 ```
 
     ['b', 'n']
-    
+
 
 
 ```python
@@ -145,7 +116,7 @@ print(dup(['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n', 'b']))
 ```
 
     ['b', 'n']
-    
+
 
 # 알파벳만 남기고 뒤집기
 
@@ -162,37 +133,36 @@ reverse_letter("ultr53o?n")
 
 
 ```python
-# 여기에 코드를 작성하세요
-# A1
-reverse_letter = ("ultr53o?n")
-p = re.compile("[^0-9]")
-print("".join(p.findall(reverse_letter))
+#내답
+# 문자열을 받는다 
+# 첫글자부터 알파벳인지? 맞다면 빈리스트 al 에 넣음
+# al 뒤집기 : 뒤에서부터 새로운 리스트 rev_al 에 넣음 
+
+def reverse_letter(a):
+    al = list(a)
+    alps = []
+    for i in al:
+        if i.isalpha() == True:
+            alps.append(i)
+
+    rev = list(reversed(alps))
+    return ''.join(rev)
+
+print(reverse_letter("snldk343nf"))
+    
 ```
 
+``` python
+#내답 comprehension
+def reverse_letter(a):
 
-      File "<ipython-input-14-ce004f598eee>", line 5
-        print("".join(p.findall(reverse_letter))
-                                                ^
-    SyntaxError: unexpected EOF while parsing
-    
+    alps = [i for i in a if i.isalpha()]
 
+    return ''.join(reversed(alps))
 
-
-```python
-#선생님 답 
-
-def rev(word):
-    nw =[]
-    for char in word:
-        if char.isalpha():
-            nw.append(word)
-            
-    return nw
-print(rev("krishan"))
+print(reverse_letter("snldk343nf"))
 ```
 
-    ['krishan', 'krishan', 'krishan', 'krishan', 'krishan', 'krishan', 'krishan']
-    
 
 
 ```python
@@ -205,7 +175,7 @@ print(rev("krishan"))
 ```
 
     nahsirk
-    
+
 
 
 ```python
@@ -225,12 +195,22 @@ print(reverse_letter("ultr53o?n"))
 
 ```python
 # 여기에 코드를 작성하세요.
-def cftb(word):
-    left, right ='qwertassdfgzxcvb','yuiophjklnm'
-    
-    if len(word)==0:
-        return True 
+# 힌트 
+# : 첫번째를 기준으로 왼쪽이면 0, 오른쪽이면 1 
+# 두번째가 오른쪽이고 첫번째가 오른쪽이면 땡, 왼쪽왼쪽이어도 땡,
+# 땡이 아닌경우엔 기준을 반전시키고 다음번째 문자로 넘어간다. 
+# 끝까지 반전하면서 넘어가면 True 출력  
+
+
+left, right ='qwertassdfgzxcvb','yuiophjklnm'
+
+
+다시풀기... 
+
+
 ```
+
+
 
 
 ```python
@@ -252,7 +232,7 @@ print(cftb("qywu"))
 ```
 
     True
-    
+
 
 
 ```python
@@ -285,7 +265,7 @@ pattern(6)
 
 
 ```python
-# 여기에 코드를 작성하세요
+# 내답
 
 def pattern(a):
     for i in range(1,a+1):
@@ -304,7 +284,7 @@ return(pattern(10))
     55555
     7777777
     999999999
-    
+
 
 
 ```python
@@ -344,49 +324,23 @@ pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog") #=> 363
 
 
 ```python
-# 여기에 코드를 작성하세요.
-def pick_and_sum():
-    for i in li:
-        if i 
+# 내답 
+#The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog 
+#30+20+10+0+1203+914+3+1349+102+4
+def pick_and_sum(inputt):
+
+    for i in inputt:
+        if i.isdigit() == False:  #숫자가 아니라면
+            new_inputt = inputt.replace(i,' ')
+            inputt = new_inputt
+    li = new_inputt.split()
+    a = [int(i) for i in li]
     
+    return(sum(a))
+
 ```
 
 
-```python
-#지명님 답 
-def pick_and_sum(word):
-    a=[char if char.isdecimal else" "for char in word]
-    a="".join(a)
-    return sum([int(i) for i in a.split()])
-pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog")
-```
-
-
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    <ipython-input-30-7044119c6d8a> in <module>
-          4     a="".join(a)
-          5     return sum([int(i) for i in a.split()])
-    ----> 6 pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog")
-    
-
-    <ipython-input-30-7044119c6d8a> in pick_and_sum(word)
-          3     a=[char if char.isdecimal else" "for char in word]
-          4     a="".join(a)
-    ----> 5     return sum([int(i) for i in a.split()])
-          6 pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog")
-    
-
-    <ipython-input-30-7044119c6d8a> in <listcomp>(.0)
-          3     a=[char if char.isdecimal else" "for char in word]
-          4     a="".join(a)
-    ----> 5     return sum([int(i) for i in a.split()])
-          6 pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog")
-    
-
-    ValueError: invalid literal for int() with base 10: 'The30quick20brown10f0x1203jumps914ov3r1349the102l4zy'
 
 
 
@@ -400,7 +354,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
     53
-    
+
 
 
 ```python
@@ -414,7 +368,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
        30     20     10 0 1203     914  3 1349   102 4      
-    
+
 
 
 ```python
@@ -428,7 +382,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
     ['30', '20', '10', '0', '1203', '914', '3', '1349', '102', '4']
-    
+
 
 
 ```python
@@ -442,7 +396,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
     [30, 20, 10, 0, 1203, 914, 3, 1349, 102, 4]
-    
+
 
 
 ```python
@@ -456,7 +410,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
     3635
-    
+
 
 
 ```python
@@ -473,7 +427,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog"))
 ```
 
     3635
-    
+
 
 
 ```python
@@ -483,7 +437,7 @@ print(pick_and_sum("The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog1"))
 
 ### map 연습
    1. 내가 정의한 함수를 적용시키기 
-   
+
 
 
 ```python
@@ -508,7 +462,7 @@ print(set(map(add_two,num)))
 ```
 
     {3, 4, 5, 6, 7, 8}
-    
+
 
 
 ```python
