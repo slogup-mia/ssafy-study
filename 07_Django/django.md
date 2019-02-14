@@ -154,5 +154,3 @@ settings.py 설정파일을 건드릴때만 서버를 재구동하면 된다.
 LANGUAGE_CODE = 'ko-kr'      #참고로 'ko-kp'는 북조선 국가코드
 TIME_ZONE = 'Asia/Seoul'
 ```
-
- 

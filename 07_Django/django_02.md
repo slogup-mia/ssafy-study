@@ -137,4 +137,3 @@ papagp API 검색 결과 보여줌
 4. c9에서는 반드시 배쉬 가상환경을 끈다  `source deactivate`
 
 5. view.py로 돌아가 `import os ` , 
-
