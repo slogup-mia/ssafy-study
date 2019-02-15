@@ -32,12 +32,11 @@ base.html의 스타일을 가져갈 다른.html 에 아래와 같이 작성한�
 장고 홈페이지
 {% endblock %}
 
-{% block body %}
 <h1>First Django</h1>
 
 <h2>{{ name }}</h2>
 <h3>{{ msg }}</h3>
-
+{% block body %}
 {% end block %}
 ```
 

@@ -80,7 +80,7 @@ Python 3.6.7
 
 1. 프로젝트 진행할 폴더 생성 (디렉토리명 : PRACTICE)
 
-2. 해당 폴더로 이동 (cd PRACTICE/)
+2. **해당 폴더로 이동 (cd PRACTICE/)**
 
 3. 가상 환경 설정 
 
@@ -90,7 +90,7 @@ Python 3.6.7
    soowon:~/workspace/PRACTICE $ pyenv virtualenv 3.6.7 practice-venv 
    ```
 
-   지금 폴더에 가상환경을 적용할거야 
+   지금 폴더에 가상환경을 적용할거야 : 이 폴더로 진입함과 동시에 가상환경 진입  (폴더진입 = 가상환경진입)
 
    ``` shell
    soowon:~/workspace/PRACTICE $ pyenv local practice-venv
@@ -104,6 +104,8 @@ Python 3.6.7
    ```
 
 5. Django 프로젝트 test 생성 
+
+   - 'practice' 프로젝트를 현재(' . ') 폴더에서 시작
 
    ``` shell
    (practice-venv) soowon:~/workspace/PRACTICE $ django-admin startproject practice .
@@ -122,6 +124,14 @@ Python 3.6.7
        └── wsgi.py
    ```
 
+6. 혹시 가상환경을 잘못된 디렉토리에 설정했다면?
+
+   가상환경 목록 확인 / 가상환경 삭제 
+
+   ``` shell
+   $pyenv virtualenvs
+   $pyenv uninstall 가상환경이름
+   ```
 
 
 ### 실행코드
@@ -137,6 +147,8 @@ Python 3.6.7
 3. settings.py 파일을 열어서 빈 allowed host를 내 페이지 주소를 아래처럼 편집하여 넣는다. 
 
     `ALLOWED_HOSTS = ['django-practice-soowon.c9users.io']` 
+
+    -  `ALLOWED_HOSTS = ['*']` : 모든 url을 허용한다.
 
 4. 열려있는 페이지 새로고침 하면  - 장고 시작 
 
