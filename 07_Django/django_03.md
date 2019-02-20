@@ -68,7 +68,7 @@ class Article(models.Model):
     content = models.TextField()
     #'title'칼럼, content'칼럼은 텍스트가 될거다 
     # CREATE TABLE ( .. )과 같은과정이지만 더 간단하지!
-    # 텍스트 필드 외에 date, auto, char field emdemddl 
+    # 텍스트 필드 외에 date, auto, char field 등등  
 ```
 
 ####  1-2. migration 생성 (terminal) 

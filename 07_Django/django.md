@@ -34,7 +34,7 @@ View: 중간 관리자 (다른 프레임워크에서는 Controller라고 명명)
 
 http://zzu.li/install-pyenv : 위의 링크의 코드를 한땀한땀 터미널 창에 복붙하여 설치 
 
-####  in terminal
+**in terminal**
 
 ``` shell
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -76,7 +76,7 @@ Python 3.6.7
 
  
 
-###  프로젝트 생성 및 환경설정
+###  2. 프로젝트 생성 및 환경설정 
 
 1. 프로젝트 진행할 폴더 생성 (디렉토리명 : PRACTICE)
 
@@ -134,7 +134,7 @@ Python 3.6.7
    ```
 
 
-### 실행코드
+### 3. 서버 실행
 
 1.  서버구동 (C9 밖에서는 $IP:$PORT부분 삭제)
 
@@ -156,7 +156,7 @@ Python 3.6.7
 
 
 
-###  시간, 언어 설정
+###  4. 시간, 언어 설정
 
 - 장고는 internationalization  (a.k.a i18n) 을 제공한다. 
 

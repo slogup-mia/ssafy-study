@@ -30,7 +30,7 @@ https://django-practice-soowon.c9users.io/admin/
 
 ####  admin.py
 
-- admin에 해당 어플리케이션의 모델을 등록한다.
+- admin에 해당 어플리케이션의 모델(클래스명)을 등록한다.
 
   ``` python
   from django.contrib import admin
