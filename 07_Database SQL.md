@@ -85,14 +85,11 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
 ####  데이터 가져오기(c9기준)
 
 1. db.csv 파일을 가져다 디렉토리에 넣기 (구글 공유폴더에 파일 있음)
-
 2. 터미널실행 - `sqlite3` - `.mode csv`
-
 3. `.import hellodb.csv hellodb`  디비.csv 파일을 가져와서 hellodb라는 시트를 만들겠다. 
-
-4.  `.tables` 테이블을 다 보여줘  
-
-5.  `SELECT*FROM hellodb;` 테이블로부터 다("*")선택해서 가져와줘 
+   - 
+4. `.tables` 테이블을 다 보여줘  
+5. `SELECT*FROM hellodb;` 테이블로부터 다("*")선택해서 가져와줘 
 
    `SELECT last_name,first_name FROM hellodb;` 테이블에서 last_name이랑 first_name 가져와줘
 

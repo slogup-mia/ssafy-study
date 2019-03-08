@@ -46,10 +46,10 @@ BOARD/
 └────articles/
 │		└─__pyache__
 │		└─migrations/
-│       	└─templates/ 
-│				└─articles/
-│			 	 	index.html
-│					   ... 
+│       └─templates/ 
+│			└─articles/
+│			 	 index.html
+│				   ... 
 │		__init__.py
 │		admin.py
 │		models.py
