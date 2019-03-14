@@ -11,8 +11,9 @@
 ###  PyCharm Professional 기본 설정 및 팁
 
 - 잔소리 밑줄 없애기 : 설정 - pep8 coding style violation 끄기
-- 터미널 알록달록 테마 : 설정 - terminal - shell path : C:\Program Files\Git\bin\bash.exe
+- 터미널 cmd→git : 설정 - terminal - shell path : C:\Program Files\Git\bin\bash.exe
 - python / Terminal 글씨 설정 : Editor - Font /  Console Font 
+- plugins 설치 : .ignore, MetarialTheme
 
 ###  
 
@@ -22,11 +23,13 @@
 
 - C9에서 했던 길고 긴 장고 초기 설정을 하지 않아도 된다. 
 
+- pip install Ipython , django_extensions 
+
 - 프로젝트를 생성하고 프로젝트 setting및 app등록 등 기본 코딩을 한다. 
 
 - 정확한 코드 활용은 [실습파일](https://github.com/JungSWon/CODING/tree/master/Django/first_local)에서 확인하자.
 
-  ### 
+  ###   
 
 
 ###  1. gitignore 
@@ -55,6 +58,14 @@
   #DB
   *.salite3
   ```
+
+- 특정 폴더를 깃 관리에서만 지우고싶다면 
+
+  .gitignore에 폴더를 추가하고 
+
+  bash에서 `git rm -r --cached  폴더명/ `
+
+###  
 
 
 ###  2. DB 조회 
@@ -397,10 +408,8 @@ def create_article(request):
 
 ###  1. 범용 단축키 
 
-- `Alt` + ` F12` : Terminal On, 다시누르면 작업파일로 커서 
 - `Shift` 연타 : 파일을 파일명으로 바로 열 수 있다. 
 - `cirl` + `d`  : 윗 줄이 그대로 duplicate된다.
-
 - `shift` + `Enter` : 줄 중간에서 바로 다음 새 줄로 이동 
 - `Ctrl` + `g` + 줄번호 : 해당 번호 줄로 바로이동
 - 윈도우 하단 Version Control - Log - project - 각 파일을 클릭하면 마지막 커밋 후 차이를 보여준다. 
@@ -456,3 +465,11 @@ def create_article(request):
 
   이러한 기능이 많으므로 16G 이상인 컴퓨터에서 작업하기를 권장한다.
 
+
+### 3. in Git Bash
+
+- `Alt` + ` F12` : Terminal(bash) On, 다시누르면 작업파일로 커서 
+- git bash창에서 다중 디렉토리와 파일 한꺼번에 생성하기 `$ mkdir -p d/e/f/a.html`  
+- git bash창에서 `git add . && git commit ` : 첫 명령이 오류가 나면 멈춘다.
+- git bash창에서 `git add . ; git commit ` : 첫 명령이 오류가 나도 뒤의 명령을 한다.
+- `python manage.py migrate appname zero` : migrate와 데이터베이스를 모두 삭제한다. 초기화. 
