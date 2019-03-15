@@ -21,7 +21,7 @@
 
 - Django Project를 생성해보자.
 
-- C9에서 했던 길고 긴 장고 초기 설정을 하지 않아도 된다. 
+- C9에서 했던 길고 지난한 장고 초기 설정을 하지 않아도 된다. 
 
 - pip install Ipython , django_extensions 
 
@@ -101,6 +101,7 @@ $python manage.py runserver
 ### 3. DB 추가 
 
 - models.py 에서 새로 db를 추가하고 migrate를 한 후
+
 - Database 새로고침 하면 새로만든 db가 들어와있다. 
 
 - admin.py에 db를 아래와 같이 추가해주고 admin 페이지를 새로고침하면 마찬가지로 확인 가능
@@ -113,7 +114,12 @@ $python manage.py runserver
   admin.site.register(Comment)
   ```
 
--  ※중요 ※ Database - sqlite에서 직접 db를 crud하면 안된다.  
+- 만약 csv파일을 로드한다면:
+
+  - migrate - database 탭 - sqlite 끌어다 놓기 - 해당 테이블 우클릭 - import - 알맞은 csv파일선택
+  - csv 파일의 첫 행이 헤더라면 First row is header 체크하고 - OK  
+
+- ※중요 ※ Database - sqlite에서 직접 db를 crud하면 안된다.  
 
   > 우리는 db중개자인 orm이 있는 상태로 장고 프로젝트를 만들고 관리하고 있는데, 중개자 없이 db자체를 바로 건드리면 기능적 충돌이 나는 경우가 많다.  orm이 자동으로 해주는 자잘한 기능들이 모두 무시되기 때문이다 (ex.DB를 삭제했을 때 sqlite상에 남아있는 contents 까지 삭제하는 작업 등)
 
@@ -464,6 +470,8 @@ def create_article(request):
 - views.py줄번호와 코드 사이에 html아이콘이, html에도 py아이콘이 있다. 클릭: 연결 파일로 바로이동
 
   이러한 기능이 많으므로 16G 이상인 컴퓨터에서 작업하기를 권장한다.
+
+- 프로젝트 시작 전 테이블 설계는 [Aquerytool](http://aquerytool.com/) 에서 하면 좋다. 
 
 
 ### 3. in Git Bash

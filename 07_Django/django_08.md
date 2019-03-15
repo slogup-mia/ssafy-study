@@ -76,7 +76,7 @@ class Posting(models.Model):
 
    - blank=True 에 관련된 것은 [이 게시물](https://wayhome25.github.io/django/2017/09/23/django-blank-null/)을 참고해보자 
 
-- in bash : pip install pillow , makemigrations, migrate
+- in bash : pip install pillow - makemigrations -  migrate
 - Database에 sqlite3 끌어다 놓는다. 
 
 ###  
