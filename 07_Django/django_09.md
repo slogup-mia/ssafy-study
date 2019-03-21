@@ -193,3 +193,91 @@ MEESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 
+###  Todo 작성하기
+
+####  - Todo model 
+
+- 유저:todos = 1: N 관계이다.
+
+- model table은 아래와 같이 구성될 것이다.
+
+  | id   | content      | complete | user_id |
+  | ---- | ------------ | -------- | ------- |
+  | 0    | 알고리즘공부 | False    | 1       |
+  | 1    | 프로젝트수정 | True     | 1       |
+  | 2    | 이사준비     | False    | 1       |
+
+- models.py 작성 - migrate
+
+- 구축 전 shell에서 model 확인해보기
+
+  ``` shell
+  $ python manage.py shell_plus
+  >> User.objects.all()
+  >> Todo.objects.all()   
+  >> Todo.objects.create(content='First Todo', user=User.objects.first())
+  >> Todo.objects.first().user
+  >> User.objects.first().todo_set.first()
+  ```
+
+####  - Todo 작성
+
+- todos/views.py - home() 작성
+- todos/admin.py 에서 todo 등록 
+- admin에서 임시 새 유저 등록  - 로그인 - todo작성 해보기  
+- todos/home.html 에 todolist 띄우기 
+
+#### - Todo 체크
+
+- todos/views.py - check() 작성
+- todos/home.html 에서 조건에 맞게 진행상태 선긋기 
+
+#### - Todo 삭제 및 수정 
+
+- 기억해둬야 할 점은 : 사용자가 Todo를 삭제해도 DB에는 남아있도록 해야 좋다. 
+
+  사용자에게만 보이지 않는 삭제인 soft deletion을 구현 하는 법을 추후에 배우자. 
+
+
+
+###  문의사항 받기
+
+- form class , model form 을 활용하는 과정이다. 
+
+- 장고가 지원하는 다양한 기능 활용의 또다른 부분! 
+
+- python manage.py startapp shouts 
+
+- 문의 title, content 를 입력해야만 써밋이 되도록 만들려면 
+
+  1. html에서 input, textarea를 required로 코딩한다. 
+
+     부작용 : 사용자가 임의로 html 코드를 변경하는 해킹이 가능하다 
+
+  2. 장고의 form을 사용하면 위의 약점을 보완할 수 있다. 
+
+####  - form 
+
+- [장고 form, field에 관한 정보](https://wayhome25.github.io/django/2017/05/06/django-form/)
+
+- form 사용에 알맞게 models.py 작성
+
+- html에 받아오는 유형들은 아래와 같다. 
+
+    ``` html
+    <form>
+        {{form}} 
+        {{form.as_ul}}
+        {{form.as_table}}
+        {{form.as_p}}
+        <input type="submit">
+    </form>
+    ```
+
+- forms.py 생성하여 작성 
+
+
+
+### 회원가입
+
+- UserCreationForm() 사용  - from django.contrib.auth.forms import UserCreationForm
