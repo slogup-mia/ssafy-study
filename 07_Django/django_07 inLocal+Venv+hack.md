@@ -1,4 +1,4 @@
-# Django in Local + hack
+# Django in Local + Venv + hack
 
 - 이제 C9에서 벗어나 로컬에서 장고를 돌려보자 
 
@@ -15,24 +15,61 @@
 - python / Terminal 글씨 설정 : Editor - Font /  Console Font 
 - plugins 설치 : .ignore, MetarialTheme
 
-###  
 
-##  Django Project
+
+##  Venv in Local
+
+로컬에서의 가상환경을 짚고가자
+
+- 로컬에서 파이썬 가상환경은 인터프리터로 관리된다. 
+
+- 인터프리터 언어 :  line by line 단위로 실행 가능한 언어
+
+  `ptint 'hello world'` 돌리면 바로 출력되는 것이 인터프리터 언어이기 때문
+
+- cf ) 컴파일러 언어: C언어가 대표적  
+
+  `hello.c`와 같은 c언어 파일을 실행하기 위해서는 실행파일을 만들어야 한다. 
+
+
+
+##  New Project
+
+new environment using 
+
+- Location :  `C:\Users\SOOWON_J\venv_test`
+
+- 새로운 프로젝트에 대한 가상환경은 : 새 프로젝트의 하위 디렉토리로 venv 폴더가 자동 생성된다. 
+- cf ) 만약 가상환경을 쓰지 않고 Existing Interpreter 을 사용하는 경우 : 로컬 파이썬에 존재하는 인터프리터를 사용한다. 보통은 이 옵션을 채택하지 않는다. 
+- 새 프로젝트를 생성하면 예상대로 venv 디렉토리가 포함된 프로젝트가 열린다.
+
+
+
+###  Django Project
 
 - Django Project를 생성해보자.
-
 - C9에서 했던 길고 지난한 장고 초기 설정을 하지 않아도 된다. 
-
 - pip install Ipython , django_extensions 
-
 - 프로젝트를 생성하고 프로젝트 setting및 app등록 등 기본 코딩을 한다. 
-
 - 정확한 코드 활용은 [실습파일](https://github.com/JungSWon/CODING/tree/master/Django/first_local)에서 확인하자.
 
-  ###   
+####  만약
+
+- 프로젝트 시작할 때 `장고 프로젝트` 로 생성했다면 
+
+  장고 버전이 3버전 (한국어DB 호환안됨)으로 자동 인스톨 되므로 터미널에서  `pip uninstall django` 한다.
+
+- 그리고 장고 인스톨. `pip install django==2.1.7` 
+
 
 
 ###  1. gitignore 
+
+- 새 프로젝트를 생성하면 예상대로 venv 디렉토리가 포함된 프로젝트가 열리고.
+
+- 가장먼저 할 일은 `.gitignore` 파일 생성하기 
+
+  
 
 - 장고 프로젝트의 venv 는 git에 올리면서 관리하면 안된다. 너무 크다. 
 
@@ -51,12 +88,15 @@
   #Virtual ENV
   venv/
   
-  # Pycharm Auto Generated DIR
+  # Pycharm Auto Generated DIR (기본설정)
   .idea/
   pycache  /
   
   #DB
   *.salite3
+  
+  # vscode 를 사용하는경우 
+  ## vscode/  추가
   ```
 
 - 특정 폴더를 깃 관리에서만 지우고싶다면 
