@@ -355,7 +355,6 @@ git이 판단하기에 상충하는 파일상태가 있다면, conflict 발생
 ###  동시에 팀플작업하기 : brancing
 
 * 'master'라고 하는 단일 브랜치에서 확장되어 사용한다. 
-
 * git flow(복잡하고, 상업적 큰 서버를 돌릴 때 쓴다) brancing 에서는 'master'는 서버가 궁극적으로 돌아가는 위치이므로 pull push는 가장 가끔 하게 된다. 
 * github flow가 덜 복잡하다. 소규모 팀플에 제격 
 
@@ -372,6 +371,8 @@ git이 판단하기에 상충하는 파일상태가 있다면, conflict 발생
 `git branch new_world` 'new_world'라는 세계 만들기 
 
 `git checkout new_world ` 'new_world'로 세계 이동 
+
+- master에서 new_world로 checkout 하기 전(작업 시작 전)엔 반드시 masterd의 state를 확인해야 한다.    
 
 * 각 세계에서 작업한 파일은 해당 세계에서만 볼 수 있다 (존재한다).
 
@@ -390,6 +391,14 @@ git이 판단하기에 상충하는 파일상태가 있다면, conflict 발생
  작업물이 어느정도 완성되면 master에 merge하거나 /  
 
 작업물이 맘에 안든다면 날려버리고 master의 무결한 원본을 다시 가져다가 쓴다. 
+
+
+
+- `git branch ` 존재하는 브랜치 확인 
+- `git branch -d new_world` 브랜치 삭제 
+- branch 안에서는 `git push origin new_world` 으로 푸시해야한다. 
+
+---
 
 
 

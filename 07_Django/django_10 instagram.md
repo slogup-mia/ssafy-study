@@ -64,3 +64,143 @@
   ```
 
   루트폴더에 대한 BASE_DIR 절대경로에 대해 : 운영체제마다 폴더경로를 구분하는 법이 다르기 때문에 ( \ or / )  파이썬이 os 모듄 내 path 내 경로생성을 해주도록 한다. 
+
+- urls , views , html 
+
+
+
+- `pip install django-bootstrap4 `pip 장고에 부트스트랩을 올리기
+
+- settings.py 
+
+  ``` python
+  INSTALLED_APPS = [
+      'bootstrap4',
+  ```
+
+
+
+
+####  fontawesome
+
+- 아이콘 사용하기 
+
+1. startusing free - base.html head에 fontawesome link rel 복붙
+2. 아이콘 html 복붙하여 적절한 위치에 복붙 
+
+
+
+### image
+
+- `pip install pillow`
+
+- ImageField 모델 추가 - makemigrations - migrate
+
+- create.html -  `<form method ="POST" enctype='multypart/form-data'>`  
+
+- settings.py 
+
+  ```  python
+  STATIC_URL = '/static/'
+  
+  # 미디어가 어느 url로 어디에 쌓일지 지정
+  ## 미디어 파일들이 불릴 URL
+  MEDIA_URL = '/media/'
+  ## 실제 저장장소 
+  MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+  ```
+
+- urls.py
+
+  ``` python
+  # 파일에 직접들어가지 않고 접근하는 함수, 객체, 방법을 만들어서 파일을 직접 조작하지 못하게 한다.
+  # 왜? 앱이 방대해졌을때 직접 접근하게 되면 파일경로 등이 바뀌었을때 하나하나 바꾸어야 하기 때문에.
+  # settings.py에 넣어놓은 설정과 관련 정보는 모두 .conf 에 다른 설정과 함께 들어간다. 
+  from django.contrib import admin
+  from django.urls import path, include
+  from django.conf import settings 
+  from django.conf.urls.static import static
+  
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('posts/', include('posts.urls')),
+  ]
+  
+  
+  # urlpatterns += static('/media/', os.path.join(BASE_DIR,'media'))
+  # 아래는 위와 같이 settings에 설정해놓은 인자 값으로 불러온다. 
+  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  ```
+
+
+
+###  Post - User 연결
+
+- models.py  
+
+  ``` python
+  # from django.contrib.auth.models import User
+  from django.conf import settings
+  
+  #user = models.ForeignKey(User, on_delete=models.CASCADE )
+  user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE )
+  ```
+
+- migtations, migrate
+
+  - 이 때 ForeignKey를 받는다는 것은 칼럼이 추가가 된다는 의미로 
+  - migrate를 시도하면 : (기존의 주인없는 post를 연결시켜줄 user)디폴트값을 주거나 취소하라는 메세지가 뜬다. 
+  - 1을 누르면 어느 유저에게 연결할지 물어본다. 
+  - 이 경우엔 admin이 유일한 유저이므로 admin의 pk인 1을 누르면 그에게 자동으로 연결시켜준다.  
+
+- 작성자만 수정/ 삭제 가능하도록 하기 
+
+  list.html
+
+  ``` html
+  {% extends 'base.html' %}
+  
+  {% block body %}
+    <div class="row justify-content-center">
+      {% for post in posts %}
+        <div class="card" style="width: 40rem;">
+          <div class="card-header">
+            <span>{{ post.user }}</span>
+          </div>
+          <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text"> {{post.content}} </p>
+            <a href="{% url 'posts:delete' post.id %}" class="btn btn-danger">삭제</a>
+            <a href="{% url 'posts:update' post.id %}" class="btn btn-info">수정</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endblock %}
+  {% if post.user == request.user %}
+  ```
+
+  views.py
+
+  ``` python
+  # @require_POST
+  def delete(request,post_id):
+      post = Post.objects.get(id='post_id')
+      if post.user != request.user:
+          return redirect('post:list')
+      post.delete()
+      return redirect('posts:list')
+      
+  def update(request,post_id):
+      post = get_object_or_404(Post,pk=post_id)
+      # post = Post.objects.get(pk=post_id)
+      if post.user != request.user:
+          return redirect('post:list')
+      if request.method == 'POST':
+          form = PostModelForm(request.POST, instance=post)
+          if form.is_valid():
+              form.save()
+              return redirect('posts:list')
+  ```
+
+
