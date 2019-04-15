@@ -1,4 +1,4 @@
-#  Django_12 Insta Like & LogInOut
+#  Django_12 InstagramUP 
 
 ##  1. Like
 
