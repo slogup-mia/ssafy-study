@@ -17,21 +17,26 @@
 
 
 
-### RDBMS 관계형데이터베이스 관리 시스템
+### RDBMS 
 
-관계형 모델을 기반으로 하는 데이터베이스 관리 프로그램이다
+- 관계형데이터베이스 관리 시스템
 
-ex) MySQL, SQLite, PostgreSQL 등의 오픈소스
+- 관계형 모델을 기반으로 하는 데이터베이스 관리 프로그램이다
 
-ex) ORACLE, MS SQL (유료)
+- ex) MySQL, SQLite, PostgreSQL 등의 오픈소스
 
-RDB(관계형 데이터베이스)의 쉬운 예? 엑셀파일, 엑셀의 table 형태. 
+- ex) ORACLE, MS SQL (유료)
 
-**SQLite**
+- RDB(관계형 데이터베이스)의 쉬운 예? 엑셀파일, 엑셀의 table 형태. 
 
-서버가 아닌 응용 프로그램에 넣어 가벼운 프로그램 
+###  SQLite
 
-우리가 배울 프로그램. 
+- 서버가 아니라 응용프로그램에 넣어 사용
+- 비교적 가벼운 DB
+- 로컬에서 간단한 DB구성 가능,
+- 오픈소스 프로젝트라서 자유롭게 사용 가능
+
+- 우리가 배울 프로그램. 
 
 
 
@@ -40,25 +45,27 @@ RDB(관계형 데이터베이스)의 쉬운 예? 엑셀파일, 엑셀의 table �
 
 
 
-###  스키마
+###  스키마 (scheme)
 
-청사진
+- 청사진
 
-데이터베이스 자료의 구조, 표현방법, 관계 등을 정의한 구조 
+- 데이터베이스 자료의 구조, 표현방법, 관계 등을 정의한 구조 
 
-| column    | datatype |
-| --------- | -------- |
-| id        | str      |
-| telephone | int      |
-| age       | int      |
-| ...       | ...      |
+- 테이블(Table), 열(Column), 행(row), 레코드(record), PK(기본 키)
 
 
+| column | datatype |
+| ------ | -------- |
+| id     | INT      |
+| age    | INT      |
+| phone  | TEXT     |
+| email  | TEXT     |
 
-* 베이터베이스 :엑셀 파일  = 테이블1,2,3.. : 시트1,2,3...
-* 열 : column 고유한 데이터 형식이 지정된다. 모든 name, 모든age.. 세로줄. 
-* 행 : row,레코드.  4명의 고객정보라면, 4개 행 존재. 가로 한줄 한줄이 각 행.
-*  PK : 기본 키. 각 행의 고유핪으로 Primary Key라고 불린다. 반드시 설정해햐 하며, DB관리및 관계 설정 시 주요하게 활용된다. 
+- Column : 각 열에는 고융한 데이터타입이 지정된다. 
+- Row : 행에는 테이블의 데이터가 저장된다. (4명의 고객정보가 저장되었다면 = 4개 행 존재)
+- PK (Primary Key): 각 행(레코드)의 고유값. 반드시 설정해야 하며, DB관리 및 관계 설정시 주요활용
+
+
 
 
 
@@ -66,13 +73,11 @@ RDB(관계형 데이터베이스)의 쉬운 예? 엑셀파일, 엑셀의 table �
 
 ##  SQL 개념 
 
-Structured Query Lite
+- Structured Query Language
+- RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍 언어
+- RDBMS에서 자료의 검색, 관리, DB스키마 생성,수정 , DB 객체 접근 조정 관리를 위해 고안 됨 
 
-RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍 언어. 
-
-자료의 검색과 관리, 스키마 생성과 수정, 데이터베이스 객제 접근 조정 관리.
-
-###  SQL문법
+###  1. SQL문법
 
 - DDL 데이터 정의 언어
 - DML 데이터 조작 언어
@@ -82,12 +87,13 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
 
 
 
-####  데이터 가져오기(c9기준)
+###  2. Hello, DB! 
+
+**데이터 가져오기(c9기준)**
 
 1. db.csv 파일을 가져다 디렉토리에 넣기 (구글 공유폴더에 파일 있음)
 2. 터미널실행 - `sqlite3` - `.mode csv`
 3. `.import hellodb.csv hellodb`  디비.csv 파일을 가져와서 hellodb라는 시트를 만들겠다. 
-   - 
 4. `.tables` 테이블을 다 보여줘  
 5. `SELECT*FROM hellodb;` 테이블로부터 다("*")선택해서 가져와줘 
 
@@ -109,50 +115,100 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    1           길동      홍         600         충청도   010-2424-1232
    ```
 
+**정리 **
 
+- terminal 에서 `sqlite3`  로 SQL 실행  
 
-#### 데이터베이스 생성
+- CSV파일을 가져와서 database로 만들고 조회
 
-1. `sqlite3 tutorial.sqlite3`
+  ```terminal
+  sqlite> .mode csv
+  sqlite> .import 파일명.csv 테이블명
+  sqlite> SELECT*FROM 테이블명;
+  1,'길동','홍',600,'충청도',010-1122-3344
+  ```
 
-2. `.databases`테이블 생성 
+- 테이블 예쁘게 보기 
 
-3. 
-
-   ```ter
-   soowon:~/workspace $ sqlite3 tutorial.sqlite3
-   SQLite version 3.8.2 2013-12-06 14:53:30
-   Enter ".help" for instructions
-   Enter SQL statements terminated with a ";"
-   sqlite> .databases
-   seq  name             file                                                      
-   ---  ---------------  ----------------------------------------------------------
-   0    main             /home/ubuntu/workspace/tutorial.sqlite3                   
-   sqlite> CREATE TABLE classmates (
-      ...> id INTEGER PRIMARY KEY,
-      ...> name TEXT
-      ...> );
-   sqlite> .tables
-   classmates
-   ```
-
-4. `.schema classmates` classmates의 구조를 보겠다 
+  ```terminal
+  sqlite> .headers on
+  sqlite> .mode column
+  sqlite> SELECT*FROM 테이블명;
+  ```
 
 
 
-####  테이블 및 스키마 조회
+### 3. DB, Table 생성
 
-1. `.tabels`  현재 sqlite3파일에 들어있는 테이블들을 조회하겠다
+**3-1 . database 생성**
 
+```terminal
+$ sqlite3 tutorial.sqlite3
+sqlite> .databases
+```
 
-####  테이블 삭제
+**3-2. Table 생성**
 
-1. `DROP TABLE classmates;` classmates라는 테이블을 삭제하겠다
+```terminal
+sqlite> CREATE TABLE classmates(
+id INT PRIMARY KEY, 
+name TEXT);
+```
 
-   함부로 쓰면 데이터가 다 날아갈 수 있으니 조심! 함부로 쓰지 말자 
+**3-3. Table과 Database의 관계** 
 
+```mermaid
+graph TD
+MovieRecommandationService_DB --> Users_Table;
+MovieRecommandationService_DB --> Movies_Table;
+MovieRecommandationService_DB --> Movie_rates_Table;
 
-####  쉽게 명령 편집하기 
+```
+
+1. Datatype 
+
+   - SQLite는 동적 데이터 타입으로, 기본적으로 affinity에 맞게 들어간다. 
+
+     | Affinity | -                                            |
+     | -------- | -------------------------------------------- |
+     | INTEGER  | TINYINT, SAMLLINT, MEDIUMINT, INT, BIGINT... |
+     | TEXT     | CHARACTER, VARCHAR, TEXT                     |
+     | REAL     | REAL, DOUBLE, FLOAT                          |
+     | NUMERIC  | NUMERIC, ECIMAL, DATE, DATETIME              |
+     | BLOB     | ( no datatype specified )                    |
+     | BOOLEAN  | 0,1                                          |
+
+2. Table 및 schema 조회 
+
+   - `.tables` : 테이블 목록 조회
+   - ` .schema tablename` : 특정 테이블 스키마 조회
+
+3. Table삭제 (DROP)
+
+   - ` DROP TABLE tablename;` 
+
+   - `.tables`
+
+   - > 아래와 같은 스키마를 가지고 있는 classmate 테이블 만들기 
+     >
+     > | column  | datatype |
+     > | ------- | -------- |
+     > | id      | INT      |
+     > | name    | TEXT     |
+     > | age     | INT      |
+     > | address | TEXT     |
+
+     ```terminal
+     aqlite> CREATE TABLE classmates(
+     id INT PRIMARY KEY,
+     name TEXT,
+     age INT,
+     address TEXT); 
+     ```
+
+     
+
+###  4. 쉽게 명령 편집하기 
 
 1. 터미널에서 실수했다면? ctrl +D 하던거 취소하고 나오기 
 
@@ -191,21 +247,25 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
 
    `adress TEXT IS NULL`:  adress에는 값이 비어있어도 괜찮다. 
 
+### 5. 데이터 추가, 읽기, 수정, 삭제
 
-#### data 추가 (insert)
+####  5-1. data 추가 (insert)
 
 1. 특정 table에 새로운 행을 추가하여 데이터를 추가할 수 있습니다. 
 
-   ``` terminal
+   ``` sqlite
     ALTER TABLE classmate
     ADD COLUMN twitter_handle TEXT;
+   ```
+
+   ``` sqlite
+   sqlite> INSERT INTO 테이블이름(name,age)
+   ...> VALUES('김길동',23);
    ```
 
    - `ALTER TABLE` is a clause that lets you make the specified changes. 
    - `ADD COLUMN` is a clause that lets you add a new column to a table: 
    - `twitter_handle` is the name of the new column being added
-
-
 
 2. 기존 행에 데이터를 추가할 수 있습니다.
 
@@ -218,8 +278,41 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    INSERT INTO celebs VALUES (1,'Justin Bieber', 22,'@justbieb');
    ```
 
+- 모든 열에 데이터를 넣을 때에는 column을 명시할 필요가 없다.
 
-####  data 수정 (update)
+  ```terminal
+  sqlite> INSERT INTO 테이블이름 VALUES('박길동','29','서울')
+  ```
+
+- 꼭 필요한 정보라면 공백으로 비워두면 안된다, 
+
+- id 는 Primary Key이므로 반드시 필요하고, 값이 저장되면 자동으로 증가하도록한다(unique)
+
+- Table 설정 변경 
+
+  ```terminal
+  sqlite> DROP TABLE 테이블이름;
+  sqlite> CREATE TABLE 테이블이름(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  age INT NOT NULL,
+  address TEXT NOT NULL); 
+  ```
+
+  - ★ AUTOINCREMENT는 INTEGER에만 사용가능합니다. 
+
+####  5-2. Data 가져오기 (SELECT)
+
+- `SELECT * FROM 테이블이름`
+- ` SELECT 열1, 열2 FROM 테이블이름` 
+- ` SELECT id, name FROM 테이블이름 LIMIT 10 ` : 10개만 가져오기
+- `SELECT 열1, 열2 FROM 테이블이름 LIMIT 1 OFFSET 3` : 세번째 부터 하나 가져오기
+- ` WHERE column = value ;` : column값이 value인 값 가져오기
+
+
+
+
+####  5-3. data 수정 (update)
 
 1. 특정 행 특정 열의 데이터를 수정할 수 있습니다.
 
@@ -233,9 +326,12 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    - `celebs` is the name of the table. 
    - `SET` is a clause that indicates the column to edit.
 
+- `UPDATE 테이블이름 SET 열1= 값1 , 열2=값2 .. WHERE 조건 ` : 특정 테이블에 특정 레코드 수정 가능
+- ` UPDATE friends SET 이름=황길동, 주소=제주시 WHERE id=10;` 
 
 
-#### data 삭제 (delete)
+
+#### 5-4. data 삭제 (delete)
 
 1. 특정 열을 조건에 맞춰 삭제할 수 있습니다.
 
@@ -273,12 +369,139 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    4           손지명   30          서울 
    ```
 
+**정리**
+
+- `DELETE FROM 테이블이름 WHERE 조건 `  : 특정 레코드를 테이블에서 삭제할 수 있다.
+- `DELETE FROM 테이블이름 WHERE id= 3` : 보통 중복 불가능한(unique한) id 를 기준으로 지운다. 
+- id 가 3인 레코드를 지우면? 아이디가 1,2,4 .. 인 레코드가 남는다. id가 재정렬되지 않는다. 
 
 
 
+| -    | 구문   | 예시                                                         |
+| ---- | ------ | ------------------------------------------------------------ |
+| C    | INSERT | INSERT INTO friends(name, age, address) VALUES('홍길동','30','서울'); |
+| R    | SELECT | SELECT * FROM friends WHERE id = 1;                          |
+| U    | UPDATE | UPDATE friends SET name='홀길돌', WHERE id =1 ;              |
+| D    | DELETE | DELETE FROM friends WHERE id=1;                              |
 
 
-#### new table ; Constraints
+
+### 6. WHERE, expression
+
+#### 6-1. where 심화
+
+- ` SELECT * FROM 테이블이름 WHERE 조건` : 특정 테이블에서 특정 조건의 Column만 가져오기 
+
+- > 예제 1. users 테이블에서 age가 30 이상인 사람만 가져오려면? 
+  >
+  > 예제 2. users 에서 age가 30 이상인 사람의 이름만 가져오려면?
+  >
+  > 예제 3. users 에서 age가 30 이상이고 이름이 길동인 사람의 나이와 주소를 가져오려면? 
+
+  예제 1 : ` SELECT * FROM users WHERE age >= 30;` 
+
+  예제 2 : ` SELECT name users WHERE age >= 30;` 
+
+  예제 3: `SELECT age,adress WHERE age >= 30 and name='길동'` 
+
+  
+
+- `SELECT * FROM classmates WHERE name = '강동주';`
+
+  `SELECT * FROM classmates WHERE id is 3;`
+
+  `SELECT id,name FROM classmates WHERE adress = '서울';  `
+
+- is 보다 = 를 쓰는 것이 더 공식적이다. ==도 가능하다. 참고
+
+
+
+#### 6-2. Expression
+
+- ` SELECT COUNT(열) FROM 테이블이름` : 레코드의 갯수를 반환한다. 
+
+- ` SELECT COUNT(*) FROM friends` : friends 테이블의 레코드 총 갯수 
+
+- ` SELECT AVG(열) FROM 테이블이름 ` : 열 레코드가 숫자일 때만 가능하다 . 
+
+- ` AVG()` , `SUM()` , `MIN()` , `MAX()` 
+
+- > 예제 1.  bank 테이블에서 balance가 가장 큰 사람의 이름과 잔액   
+  >
+  > 예제 2. bank 테이블에서 30세 이상인 사람의 평균 계좌 잔액은? 
+
+  틀림 !!!??  ` SELECT balance, name FROM bank WHERE MAX(balance)` 
+
+  예제 1 : ` SELECT MAX(balance), name FROM bank ` : bank에서 balance가 가장 큰 사람의 이름과 잔액   
+
+  예제 2 :` SELECT AVG(balance) FROM bank WHERE age >= 30; `  
+
+  
+
+#### 6-3. LIKE
+
+- `SELECT * FROM WHERE age LIKE'2%'; ` : 정확한 비교가 아닌, 패턴을 확인하여 해당 값 반환 
+
+  | -    | -       | -                                    |
+  | ---- | ------- | ------------------------------------ |
+  | %    | 2%      | 2로 시작하는 값                      |
+  |      | %2      | 2로 끝나는 값                        |
+  |      | %2%     | 2가 들어가는 값                      |
+  | _    | _2%     | 아무값 다음 두번째가 2로 시작하는 값 |
+  |      | 1___    | 1로 시작하고 네자리인 값             |
+  |      | `2_%_%` | 2로 시작하고 적어도 3자리인 값       |
+
+### 6. 정렬(order) 
+
+- `SELECT 출력하고자하는열 FROM 테이블이름 ORDER BY 정렬하고자하는열 ASC/DESC ` 
+
+- > 예제 1. users에서 나이순으로 오름차순 정렬하여 상위 10개만 뽑으려면?
+  >
+  > 예제 2. users에서 나이순, 성 순으로 오름차순 정렬하여 상위 10개만 뽑으려면?
+  >
+  > 예제 3. users에서 계좌잔액순으로 내림차순 정렬하여 해당하는 사람이름 10개만 뽑으려면? 
+
+  예제1. ` SELECT * FROM users ORDER BY age ASC LIMIT 10;` 
+
+  예제2. `SELECT * FROM users ORDER BY age, last_name ASC LIMIT 10;` 
+
+  예제3. `SELECT first_name,last_name FROM users ORDER BY balance DESC LIMIT 10; ` 
+
+  
+
+1. 우선 테이블 전체를 보자 
+
+   ```
+   SELECT *FROM classmates;     
+   id          name        age         adress    
+   ----------  ----------  ----------  ----------
+   1           강동주   34          서울    
+   2           정수원   28          부천    
+   3           권혁주   29          강릉       
+   ```
+
+2. `SELECT id, name, age FROM classmates LIMIT 2;` : 2개까지만 보겠다
+
+   ```
+   id          name        age       
+   ----------  ----------  ----------
+   1           강동주   34        
+   2           정수원   28 
+   ```
+
+3. `SELECT id, name, age FROM classmates LIMIT 1 OFFSET 1;` : 1개 건너띄고 1개만 보겠다
+
+   ```
+   id          name        age       
+   ----------  ----------  ----------
+   2           정수원   28   
+   ```
+
+   ex) 게시판에서 게시물을 한페이지에 50개씩만 보도록 LIMIT을 걸고, 특정 페이지를 보고자 하면 앞 페이지를 건너띄고 조회하는 OFFSET*페이지 를 걸 수 있다. : 페이지네이션 
+
+
+
+**new table ; Constraints**
 
 1. 새로운 테이블을 한번에 생성해 봅시다.
 
@@ -306,9 +529,7 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    -  `NOT NULL` columns must have a value. Attempts to insert a row without a value for a `NOT NULL` column will result in a constraint violation and the new row will not be inserted.
    -  `DEFAULT` columns take an additional argument that will be the assumed value for an inserted row if the new row does not specify a value for that column.
 
-
-
-####  데이터 선택적으로 조회하기
+###  데이터 선택적으로 조회하기
 
   **1.  LIMIT 과 OFFSET**
 
@@ -351,12 +572,6 @@ RDBMS의 데이터를 관리하기 위해 설계된 특수 목적의 프로그�
    `SELECT id,name FROM classmates WHERE adress = '서울';  `
 
 2. is 보다 = 를 쓰는 것이 더 공식적이다. ==도 가능하다. 참고
-
-
-
-
-
-
 
 
 
