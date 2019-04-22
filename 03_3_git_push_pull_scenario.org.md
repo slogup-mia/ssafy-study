@@ -16,6 +16,21 @@ subline text - 설치하면 경량 파이썬 구동에 좋음
 
 
 
+##  Git 명령어
+
+- 내 컴퓨터 깃 계정 초기화 : 관리자 권한으로 배쉬 실행 - `git config —system —unset credential.helper`
+
+- 지우고자 하는 정보 지우기 
+
+  ``` bash
+  git config --global --unset credential.helper
+  git config --global --unset-all user.name
+  git config --global --unset-all user.email
+  ```
+
+
+
+
 ##  Push / Pull 시나리오
 
 #### * udacity.com - how to use git and github 아주 잘 디테일되어있는 강의 
