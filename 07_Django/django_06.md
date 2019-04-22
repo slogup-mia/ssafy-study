@@ -1,9 +1,13 @@
-#  django_06
+#  django_06 Model + Comment
 
 **학습목표**
 
 - DB관계 
 - 댓글달기
+
+참고 
+
+- [Modeling 테이블 이미지 생성 사이트](http://Aquerytool.com) 
 
 
 
