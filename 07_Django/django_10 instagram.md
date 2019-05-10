@@ -2,7 +2,7 @@
 
 - `zzu.li/install-pyenv`
 
-- 코드 복붙  +  `pyenv install 3.6.7` +  `pyenv-global 3.6.7`
+- 코드 복붙  +  `pyenv install 3.6.7` +  `pyenv global 3.6.7`
 
 - `mkdir INSTAGRAM` - `cd INSTAGRAM` - ` pyenv virtualenv 3.6.7 insta-venv` - `pyenv local insta-venv`
 
