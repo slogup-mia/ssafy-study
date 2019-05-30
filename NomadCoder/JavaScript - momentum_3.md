@@ -234,23 +234,64 @@ function deleteToDo(event){
 
 ###  appendChild
 
-- `li.appendShild(span)` 일때 
-
-  : li 요소 안에 자식노드로 span 을 넣는다. 
+- `li.appendChild(span)` : li 요소 안에 자식노드로 span 을 넣는다. 
 
 
 
 ### forEach
 
+- 주어진 함수를 배열 요소 각각에 대해 실행하는 메소드
+
+- `array1.forEach(function(element)){console.log(element)}` 
+
+  : array 요소를 하나씩 돌면서 콘솔에 출력
+
 
 
 ### filter
+
+- 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환하는 메소드
+
+- `const newArray = oldArray.filter(function(element){ element === true }) ` 
+
+- ```js
+  var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+  
+  const result = words.filter(word => word.length > 6);
+  
+  console.log(result);
+  // expected output: Array ["exuberant", "destruction", "present"]
+  ```
+
+- ```js
+  var oldArray = [5,6,2,3,7,4,1];
+  
+  const newArray = oldArray.filter(function(element){return element >= 4});
+  
+  console.log(newArray)
+  ```
+
+  
 
 
 
 ###  ParseInt
 
+- 문자열을 정수로 교체
 
+- ```js
+  const res = parseInt("324");
+  const res2 = parseInt("");
+  const res3 = parseInt('333.333');
+  console.log(res)
+  console.log(res2)
+  console.log(res3)
+  
+  // expected output: 
+  	// 324
+  	// NaN
+  	// 333
+  ```
 
 
 

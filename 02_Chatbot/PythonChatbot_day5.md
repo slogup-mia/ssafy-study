@@ -41,7 +41,7 @@ $
 
 
 
-``` py
+``` python
 import os
 import requests
 
@@ -85,7 +85,7 @@ requests.get(f"{url}?'chat_id'={chat_id}&text={name}")
 
 ```
 
-```git
+```bash
 student@M7012 MINGW64 /
 $ cd ~
 
