@@ -1,4 +1,4 @@
-# JavaScript - momentum_2
+# JavaScript - momentum_4
 
 - 학습목표 : momentum 제작하기
 - 배경이미지 추가
