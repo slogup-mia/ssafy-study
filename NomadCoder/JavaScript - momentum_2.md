@@ -1,69 +1,10 @@
-## JavaScript - momentum_2
+# JavaScript - momentum_2
 
 - 학습목표 : momentum 제작하기
 
 
 
-##   I. Clock 
-
-###  index.html 
-
-``` html 
-<div class="js-clock">
-	<h1>00:00</h1>
-</div>
-```
-
-###  clock.js 
-
-1. 
-
-``` js
-const clockContainer = document.querySelector('.js-clock'),
-    clockTitle = clockContainer.querySelector('h1')
-```
-
-`.js-clock` 블럭을 clockContainer로 , `h1` 을 clockTitle로 지정
-
-
-
-2. 
-
-``` js
-function getTime(){
-    const date = new Date()
-    const minutes = date.getMinutes()
-    const hours = date.getHours()
-    const seconds = date.getSeconds()
-    clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours
-}: ${ minutes < 10 ? `0${minutes}` : minutes 
-}: ${ seconds < 10 ? `0${seconds}` : seconds }` ;
-}
-```
-
-- 시, 분, 초를 함수로 받는다.
-- clockTitle의 텍스트인 `00:00`을 가져와서 수정한다. 
-  - 이 때, 삼항연산자를 이용해 1,2,3 .. 으로 표현되는 시간 숫자를 01, 02, 03 으로 표현했다.
-
-  - if seconds > 10 return `0S{seonds}` 와 같이 생각하면 된다.
-
-    
-
-3. 
-
-``` js
-function init(){
-    getTime();
-    setInterval(getTime, 1000 )
-}
-init()
-```
-
-- setInterval(실행할 함수, 실행할 시간간격)
-
-
-
-##  II. Greeting
+##  Greeting
 
 ### index.html
 
@@ -73,6 +14,8 @@ init()
 </form>
 
 <h4 class="js-greetings greeting"></h4>
+
+<script src="greeting.js"></script>
 ```
 
 
@@ -187,7 +130,7 @@ init();
 
 
 
-##   X. 메소드
+##   메소드
 
 ###  1-1. setItem
 

@@ -1,4 +1,4 @@
-## JavaScript - momentum_1 
+# JavaScript - momentum_1 
 
 - 학습목표 : momentum 제작하기
 - index.html 생성 
@@ -13,6 +13,8 @@
   <div class="js-clock">
   	<h1>00:00</h1>
   </div>
+  
+  <script src="clock.js"></script>
   ```
 
 - clock.js 
@@ -57,7 +59,7 @@
 
     
 
-##   innerText 외 
+##   메소드
 
 각 파일에 아래와 같이 코드가 있다. 
 
