@@ -144,11 +144,11 @@ function init(){
 init();
 ```
 
-- `toDos` 를 key로 갖는 데이터가 있다면 
+- `toDos` 를 key로 갖는 데이터가 있다면 요소들을 string으로 바꾼다.
 
 
 
-8. 
+8.  스트링 요소들을 돌면서 함수실행
 
 ```js
 function loadToDos(){
