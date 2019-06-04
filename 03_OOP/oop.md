@@ -1,5 +1,5 @@
 
-# 시작하기전에
+##  시작하기전에
 
 <wikipedia - 객체지향 프로그래밍> 
 >
@@ -31,7 +31,7 @@ print(type(a))
 ```
 
     <class 'complex'>
-    
+
 
 
 ```python
@@ -41,7 +41,7 @@ print(complex_number.real, complex_number.imag)
 ```
 
     3.0 4.0
-    
+
 
 
 ```python
@@ -52,7 +52,7 @@ print(a)
 ```
 
     [1, 2, 5]
-    
+
 
 
 ```python
@@ -61,9 +61,8 @@ print(dir(a))
 ```
 
     ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
-    
 
-## 실습 문제
+### 실습 문제
 
 > 프로그래밍으로 나와 친구의 이름을 저장해보세요.
 >
@@ -80,6 +79,7 @@ print(dir(a))
 
   기존에 값이 있으면, 갯수를 추가하고 없으면 새로 만드는 `in_my_pocket` 함수를 만듭시다.
   
+
 **친구의 정보와 지갑도 만들어봅시다.**
 
 
@@ -116,7 +116,7 @@ print(in_my_pocket("Soowon Jung",my_pocket,"otp",2))
 
     {'won': 1000, 'card': ['woori', 'hyundai'], 'otp': 1}
     {'won': 1000, 'card': ['woori', 'hyundai'], 'otp': 3}
-    
+
 
 
 ```python
@@ -129,11 +129,11 @@ greeting("chanmi Jung","0101")
 ```
 
     안녕,chanmi Jung야, 생일은 0101이구나. 반갑다.
-    
 
-# 클래스 및 인스턴스
 
-## 클래스 객체
+## 클래스 및 인스턴스
+
+###  클래스 객체
 
 ```python
 class ClassName:
@@ -165,11 +165,11 @@ print(type(TestClass))    #가장 상위 단계에 있는 클래스의 타입은
 ```
 
     <class 'type'>
-    
+
 
 * 선언시 self는 반드시 작성해주세요! 나중에 설명드립니다.
 
-## 인스턴스 객체
+### 인스턴스 객체
 
 * 인스턴스 객체는 `ClassName()`을 호출함으로써 선언된다.
 
@@ -195,7 +195,7 @@ iu.hello()
 ```
 
     hello, Guildong Hong
-    
+
 
 
 ```python
@@ -213,7 +213,7 @@ iu.hello()
 ```
 
     hello, I am iu
-    
+
 
 
 ```python
@@ -247,7 +247,7 @@ john.hello()
       hello, I am John.
     40years old
     and I am a man
-    
+
 
 총평,다시: 
 - 예전에는 절차적인 프로그래밍, 이거일땐 이렇게 저거일때 저렇게.=> 사람이 알아볼수없다.
@@ -300,7 +300,7 @@ john.hello()
     40years old
     and I am a man
     my dna is 46
-    
+
 
 
 
@@ -368,7 +368,7 @@ print(iu)     #<__main__.Person object at 0x0189C0B0> 건조하게 출력
     <class 'int'>
     <class 'str'>
     <__main__.Person object at 0x0189C0B0>
-    
+
 
 
 ```python
@@ -394,7 +394,7 @@ class Person:
         
         ^
     SyntaxError: unexpected EOF while parsing
-    
+
 
 
 
@@ -447,7 +447,7 @@ class Person:
 # 강다니엘을 출력해봅시다. 2
 ```
 
-## 실습 문제 발전
+### 실습 문제 발전
 
 > 지금까지 배운 것을 통해서 Person 클래스를 만들고, 친구와 나를 표현해봅시다.
 >
@@ -491,7 +491,7 @@ john.greeting()
 ```
 
     안녕하세요 ,저는 John입니다.
-    
+
 
 
 ```python
@@ -578,9 +578,9 @@ print(myNewList)
 ```
 
     리스트 내용 3, 3, 3, 4
-    
 
-## 자유롭게 만들어보기
+
+### 자유롭게 만들어보기
 
 > 이 세상에 있는 무엇인가를 자유롭게 표현해주세요.
 
@@ -593,14 +593,14 @@ reverse()
 
 
     ---------------------------------------------------------------------------
-
+    
     NameError                                 Traceback (most recent call last)
-
+    
     <ipython-input-44-c5c4500b0a1d> in <module>
           1 # 아래에 코드를 작성해주세요.
           2 a=[3,2,1]
     ----> 3 reverse()
-    
+
 
     NameError: name 'reverse' is not defined
 
@@ -609,3 +609,4 @@ reverse()
 ```python
 
 ```
+
