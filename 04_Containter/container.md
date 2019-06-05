@@ -1,29 +1,8 @@
-
-
 ```python
 from IPython.display import IFrame    
 ```
 
-#### 교재
- zzu.li/papago_flask
- id : ssafy.student@gmail.com
-
-# 문자열 메소드 활용하기
-
-
-```python
-
-```
-
-## 변형
-
-### `.capitalize()`, `title()`, `.upper()`
-
-`.capitalize()` : 앞글자를 대문자로 만들어 반환합니다.
-
-`.title()` : 어포스트로피나 공백을 이후를 대문자로 만들어 반환합니다.
-
-`.upper()` : 모두 대문자로 만들어 반환합니다.
+## 문자열 메소드 활용하기
 
 
 ```python
@@ -31,8 +10,6 @@ a = "hI! Everyone, I'm kim"
 dir(a)
 #dir() 사용할 수 있는 함수 리스트 보기 
 ```
-
-
 
 
     ['__add__',
@@ -114,7 +91,9 @@ dir(a)
      'upper',
      'zfill']
 
+### 1. 변형
 
+- `.capitalize()` : 앞글자를 대문자로 만들어 반환합니다.
 
 
 ```python
@@ -122,11 +101,9 @@ a.capitalize()
 ```
 
 
-
-
     "Hi! everyone, i'm kim"
 
-
+- `.title()` : 어포스트로피나 공백을 이후를 대문자로 만들어 반환합니다.
 
 
 ```python
@@ -134,11 +111,9 @@ a.title()
 ```
 
 
-
-
     "Hi! Everyone, I'M Kim"
 
-
+- `.upper()` : 모두 대문자로 만들어 반환합니다.
 
 
 ```python
@@ -146,17 +121,11 @@ a.upper()
 ```
 
 
-
-
     "HI! EVERYONE, I'M KIM"
 
 
 
-### `lower()`, `swapcase()`
-
-`lower()` : 모두 소문자로 만들어 반환합니다.
-
-`swapcase()` : 대<->소문자로 변경하여 반환합니다.
+- `lower()` : 모두 소문자로 만들어 반환합니다.
 
 
 ```python
@@ -164,11 +133,9 @@ a.lower()
 ```
 
 
-
-
     "hi! everyone, i'm kim"
 
-
+- `swapcase()` : 대<->소문자로 변경하여 반환합니다.
 
 
 ```python
@@ -176,13 +143,11 @@ a.swapcase()
 ```
 
 
-
-
     "Hi! eVERYONE, i'M KIM"
 
 
 
-### `.join(iterable)`
+- `.join(iterable)`
 
 특정한 문자열로 만들어 반환합니다.
 
@@ -201,20 +166,18 @@ print(b)
 
     hello my name is john
 
-
+- `.split()` 
 
 ```python
 b.split()
 ```
 
 
-
-
     ['hello', 'my', 'name', 'is', 'john']
 
 
 
-### `.replace(old, new[, count])`
+- `.replace(old, new[, count])`
 
 바꿀 대상 글자를 새로운 글자로 바꿔서 반환합니다. 
 
@@ -234,18 +197,13 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 ```
 
 
-
-
     'wow'
 
 
 
+### 2. 글씨 제거 
 
-```python
-
-```
-
-### 글씨 제거 (`strip([chars])`)
+- `strip([chars])`
 
 특정한 문자들을 지정하면,  양쪽을 제거하거나 왼쪽을 제거하거나(lstrip) 오른쪽을 제거합니다(rstrip)
 
@@ -256,8 +214,6 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 '            hello      '.strip()
 #공백제거 #'hello'
 ```
-
-
 
 
     'hello'
@@ -271,8 +227,6 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 ```
 
 
-
-
     'hello      '
 
 
@@ -284,15 +238,13 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 ```
 
 
-
-
     '            hello'
 
 
 
-## 탐색 및 검증
+###  3. 탐색 및 검증
 
-### `.find(x)` : x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환합니다.
+- `.find(x)` : x의 첫 번째 위치를 반환합니다. 없으면, -1을 반환합니다.
 
 
 ```python
@@ -304,22 +256,17 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 "ssafy".find('z')
 # -1 = False
 
-
 #비교 
 's' in 'ssafy'
 #True 
-
-
 ```
-
-
 
 
     -1
 
 
 
-### `.index(x)` : x의 첫번째 위치를 반환합니다. 없으면, 오류가 뜹니다.
+- `.index(x)` : x의 첫번째 위치를 반환합니다. 없으면, 오류가 뜹니다.
 
 
 ```python
@@ -332,20 +279,22 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 ```
 
 
-    ---------------------------------------------------------------------------
-    
-    ValueError                                Traceback (most recent call last)
-    
-    <ipython-input-36-8ccd45027c55> in <module>
-          3 "ssafy".index('s')
-          4 #0
-    ----> 5 "ssafy".index('z')
+```shell
+ValueError                               
+Traceback (most recent call last)
+
+<ipython-input-36-8ccd45027c55> in <module>
+      3 "ssafy".index('s')
+      4 #0
+----> 5 "ssafy".index('z')
+```
 
 
-    ValueError: substring not found
 
+### 4. 다양한 확인 메소드 
 
-### 다양한 확인 메소드 : 참/거짓 반환
+: 참/거짓 반환
+
 ```
 .isaplha(), .isdecimal(), .isdigit(), .isnumeric(), .isspace(), .issuper(), .istitle(), .islower()
 ```
@@ -353,10 +302,7 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 
 ```python
 '123'.isdigit()
-#True
 ```
-
-
 
 
     True
@@ -366,19 +312,15 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 
 ```python
 '1 2 3'.isspace()
-
-
 #여러가지 시도해보기 
 ```
-
-
 
 
     False
 
 
 
-## `split()`
+- `split()`
 
 문자열을 특정한 단위로 나누어 리스트로 반환합니다.
 
@@ -387,8 +329,6 @@ count를 지정하면 해당 갯수만큼만 시행합니다.
 'hello world'.split()
 #['hello', 'world']
 ```
-
-
 
 
     ['hello', 'world']
@@ -405,17 +345,15 @@ list(map(int,'35 50'.split()))
 ```
 
 
-
-
     [35, 50]
 
 
 
-# 리스트 메소드 활용하기
+##  리스트 메소드 활용하기
 
-## 값 추가 및 삭제
+###  값 추가 및 삭제
 
-### `.append(x)`
+- `.append(x)`
 
 리스트에 값을 추가할 수 있습니다.
 
@@ -435,6 +373,8 @@ print(caffe)
     ['starbucks', 'tomntoms', 'hollys', 'w cafe', 'w cafe']
 
 
+
+- `.remove()`
 
 ```python
 # 값을 제거해봅시다..
